@@ -1,7 +1,7 @@
 <template>
   <div class="tab-header">
     <div></div>
-    <div>
+    <div class="options">
       <router-link
         tag="a"
         to="/mine"
@@ -33,5 +33,14 @@ export default {
   .tab-header {
     display: flex;
     justify-content: space-around;
+  }
+
+  .more,
+  .search {
+    width: 15%;
+  }
+
+  .options {
+    width: 70%;
   }
 </style>
