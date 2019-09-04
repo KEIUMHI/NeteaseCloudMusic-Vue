@@ -16,7 +16,7 @@
         class="tab_item">云村</router-link>
       <router-link
         tag="a"
-        to="/video"
+        to="/videos"
         class="tab_item">视频</router-link>
     </div>
     <div></div>
