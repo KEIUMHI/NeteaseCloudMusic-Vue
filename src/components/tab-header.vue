@@ -5,19 +5,19 @@
       <router-link
         tag="a"
         to="/mine"
-        class="tab_item">我的</router-link>
+        class="tab-item">我的</router-link>
       <router-link
         tag="a"
         to="/find"
-        class="tab_item">发现</router-link>
+        class="tab-item">发现</router-link>
       <router-link
         tag="a"
         to="/cloud"
-        class="tab_item">云村</router-link>
+        class="tab-item">云村</router-link>
       <router-link
         tag="a"
         to="/videos"
-        class="tab_item">视频</router-link>
+        class="tab-item">视频</router-link>
     </div>
     <div></div>
   </div>
@@ -30,6 +30,8 @@ export default {
 </script>
 
 <style lang="less" scoped>
+  @import "~@/assets/style/variables.less";
+
   .tab-header {
     display: flex;
     justify-content: space-around;
@@ -37,10 +39,26 @@ export default {
 
   .more,
   .search {
-    width: 15%;
+    width: 20%;
   }
 
   .options {
-    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+    
+    .tab-item {
+      width: 25%;
+      font-size: @font-size-medium;
+      text-align: center;
+      text-decoration: none;
+      color: #999;
+
+      .router-link-active {
+        font-size: @font-size-medium-x;
+        font-weight: bold;
+        color: #333;
+      }
+    }
   }
 </style>

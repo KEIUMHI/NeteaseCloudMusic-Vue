@@ -16,6 +16,10 @@ export default new Router ({
     mineRouter,
     findRouter,
     cloudRouter,
-    videosRouter
+    videosRouter,
+    { // 设定重定向页面为 find
+      path: '/*',
+      redirect: '/find'
+    }
   ]
 })
