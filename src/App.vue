@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <tab-header />
+    <tab-head />
     <keep-alive>
       <router-view />
     </keep-alive>
@@ -8,12 +8,12 @@
 </template>
 
 <script>
-import TabHeader from '@/components/tab-header'
+import TabHead from '@/components/tab-head/tab-head'
 
 export default {
   name: 'app',
   components: {
-    TabHeader
+    TabHead
   }
 }
 </script>

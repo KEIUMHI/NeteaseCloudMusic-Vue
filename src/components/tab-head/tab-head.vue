@@ -1,5 +1,5 @@
 <template>
-  <div class="tab-header">
+  <div class="tab-head">
     <div></div>
     <div class="options">
       <router-link
@@ -25,14 +25,14 @@
 
 <script>
 export default {
-  name: 'tab-header'
+  name: 'tab-head'
 }
 </script>
 
 <style lang="less" scoped>
   @import "~@/assets/style/variables.less";
 
-  .tab-header {
+  .tab-head {
     display: flex;
     justify-content: space-around;
   }
