@@ -42,3 +42,4 @@ style.height: 控制icon背景高度
 style.color: 控制字体颜色
 style.fontSize: 控制字体大小
 style.backGround: 控制icon背景颜色
+style.iconClassName: 控制icon图标

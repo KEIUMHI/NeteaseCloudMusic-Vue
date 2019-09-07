@@ -2,14 +2,18 @@
   <div class="tab-feature-item">
     <div
       class="icon"
-      :style="{ background: style.background }">
-
+      :style="{
+        width: styles.width,
+        height: styles.height,
+        background: styles.background
+      }">
+      <i :class="['iconfont', styles.iconClassName]"></i>
     </div>
     <div
       class="label"
-      :style="{
-        fontSize: style.fontSize,
-        color: style.color
+      :styles="{
+        fontSize: styles.fontSize,
+        color: styles.color
       }">{{ label }}</div>
   </div>
 </template>
@@ -18,12 +22,18 @@
 export default {
   name: 'tab-feature-item',
   props: {
-    style: {
+    styles: {
       type: Object,
       required: true,
-      // default: {
-      //   width: '30px',
-      // }
+      default: () => {
+        return {
+          width: '30px',
+          height: '30px',
+          fontSize: '12px',
+          color: '#777',
+          background: '#d44439'
+        }
+      }
     },
     label: {
       type: String,

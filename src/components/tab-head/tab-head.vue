@@ -1,6 +1,8 @@
 <template>
   <div class="tab-head">
-    <div></div>
+    <div>
+      <i class="iconfont iconMenu"></i>
+    </div>
     <div class="options">
       <router-link
         tag="a"
@@ -34,7 +36,9 @@ export default {
 
   .tab-head {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 14px;
   }
 
   .more,
@@ -54,7 +58,7 @@ export default {
       text-decoration: none;
       color: #999;
 
-      .router-link-active {
+      &.router-link-active {
         font-size: @font-size-medium-x;
         font-weight: bold;
         color: #333;
