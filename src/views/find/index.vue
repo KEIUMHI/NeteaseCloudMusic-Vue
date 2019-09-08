@@ -1,14 +1,16 @@
 <template>
   <div class="find-container">
-    
-    find
+    <div class="wrap">
 
-    <div class="label-options">
-      <tab-feature-item
-        v-for="(tab, index) in tabFeatureItemStyles"
-        :key="index"
-        :styles="tab.style"
-        :label="tab.label" />
+      <div class="label-options">
+        <tab-feature-item
+          v-for="tab in tabFeatureItems"
+          :key="tab.id"
+          :styles="sameStyle"
+          :label="tab.label"
+          :icon-class-name="tab.iconClassName" />
+      </div>
+
     </div>
   </div>
 </template>
@@ -24,38 +26,33 @@ export default {
   data() {
     return {
       sameStyle: {
-        width: '30px',
-        height: '30px',
+        width: '38px',
+        height: '38px',
         fontSize: '10px',
+        iconFontSize: '18px',
         background: '#d44439',
         color: '#777',  
-        iconClassName: ''
       },
-      tabFeatureItemStyles: [{
+      tabFeatureItems: [{
+        id:1,
         label: '每日推荐',
-        style: {
-          ...this.sameStyle
-        }
+        iconClassName: 'iconcalendar'
       }, {
+        id:2,
         label: '歌单',
-        style: {
-          ...this.sameStyle
-        }
+        iconClassName: 'iconround-queue_music'
       }, {
+        id:3,
         label: '排行榜',
-        style: {
-          ...this.sameStyle
-        }
+        iconClassName: 'iconicranking'
       }, {
+        id:4,
         label: '电台',
-        style: {
-          ...this.sameStyle
-        }
+        iconClassName: 'iconradio'
       }, {
+        id:5,
         label: '直播',
-        style: {
-          ...this.sameStyle
-        }
+        iconClassName: 'iconicon_live_hover'
       }]
     }
   },
@@ -69,6 +66,9 @@ export default {
 
 <style lang="less" scoped>
 
-  
+  .label-options {
+    display: flex;
+    justify-content: space-between;
+  }
 
 </style>

@@ -1,27 +1,29 @@
 <template>
-  <div class="tab-head">
-    <div>
-      <i class="iconfont iconMenu"></i>
+  <div class="wrap">
+    <div class="tab-head">
+      <div>
+        <i class="iconfont iconMenu"></i>
+      </div>
+      <div class="options">
+        <router-link
+          tag="a"
+          to="/mine"
+          class="tab-item">我的</router-link>
+        <router-link
+          tag="a"
+          to="/find"
+          class="tab-item">发现</router-link>
+        <router-link
+          tag="a"
+          to="/cloud"
+          class="tab-item">云村</router-link>
+        <router-link
+          tag="a"
+          to="/videos"
+          class="tab-item">视频</router-link>
+      </div>
+      <div></div>
     </div>
-    <div class="options">
-      <router-link
-        tag="a"
-        to="/mine"
-        class="tab-item">我的</router-link>
-      <router-link
-        tag="a"
-        to="/find"
-        class="tab-item">发现</router-link>
-      <router-link
-        tag="a"
-        to="/cloud"
-        class="tab-item">云村</router-link>
-      <router-link
-        tag="a"
-        to="/videos"
-        class="tab-item">视频</router-link>
-    </div>
-    <div></div>
   </div>
 </template>
 
@@ -38,7 +40,6 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 14px;
   }
 
   .more,

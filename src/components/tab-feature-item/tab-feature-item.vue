@@ -7,11 +7,13 @@
         height: styles.height,
         background: styles.background
       }">
-      <i :class="['iconfont', styles.iconClassName]"></i>
+      <i 
+        :class="['iconfont', iconClassName]"
+        :style="{ fontSize: styles.iconFontSize }"></i>
     </div>
     <div
       class="label"
-      :styles="{
+      :style="{
         fontSize: styles.fontSize,
         color: styles.color
       }">{{ label }}</div>
@@ -27,9 +29,9 @@ export default {
       required: true,
       default: () => {
         return {
-          width: '30px',
-          height: '30px',
-          fontSize: '12px',
+          width: '38px',
+          height: '38px',
+          fontSize: '10px',
           color: '#777',
           background: '#d44439'
         }
@@ -39,6 +41,11 @@ export default {
       type: String,
       required: true,
       default: '每日推荐'
+    },
+    iconClassName: {
+      type: String,
+      required: true,
+      default: 'iconcalendar'
     }
   }
 }
@@ -46,13 +53,21 @@ export default {
 
 <style lang="less" scoped>
   .tab-feature-item {
-    display: flex;
-    flex-flow: wrap;
+    display: inline-block;
     text-align: center;
   }
 
   .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 50%;
+    margin: 0 auto;
+    color: #fff;
+  }
+
+  .label {
+    margin-top: 6px;
   }
 </style>
 
