@@ -72,6 +72,7 @@ export default {
   .label-options {
     display: flex;
     justify-content: space-between;
+    padding: 18px 0;
   }
 
 </style>

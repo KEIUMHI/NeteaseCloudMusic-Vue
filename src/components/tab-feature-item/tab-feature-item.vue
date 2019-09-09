@@ -1,5 +1,7 @@
 <template>
-  <div class="tab-feature-item">
+  <div
+    class="tab-feature-item"
+    @click="_handleClick">
     <div
       class="icon"
       :style="{
@@ -47,7 +49,12 @@ export default {
       required: true,
       default: 'iconcalendar'
     }
-  }
+  },
+  methods: {
+    _handleClick () {
+      this.$emit('tabClick')
+    } 
+  },
 }
 </script>
 
@@ -67,7 +74,7 @@ export default {
   }
 
   .label {
-    margin-top: 6px;
+    margin-top: 8px;
   }
 </style>
 

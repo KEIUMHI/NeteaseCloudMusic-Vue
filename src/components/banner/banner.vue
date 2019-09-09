@@ -61,8 +61,11 @@ export default {
       // eslint-disable-next-line
       let bannerSwiper = new Swiper('.banner', {
         loop: true,
-        autoPlay: true,
-        delay: 3000,
+        autoplay: {
+          delay: 5000,
+          stopOnLastSlide: false,
+          disableOnInteraction: true
+        },
         pagination: {
           el: '.banner-pagination',
         }

@@ -1,9 +1,9 @@
 <template>
   <div id="app">
 
-    <div class="tab-header">
-      <TabHead @change="_tabsChange" />
-    </div>
+    <TabHead
+      class="tab-header"
+      @change="_tabsChange" />
 
     <div
       id="page"
@@ -166,6 +166,6 @@ export default {
 <style lang="less">
   @import "~@/assets/style/variables.less";
   .tab-header {
-    margin: 8px 0 0 0;
+    margin: 10px 0 20px 0;
   }
 </style>
