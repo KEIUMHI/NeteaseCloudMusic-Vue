@@ -5,11 +5,22 @@
         <div
           v-for="(banner, index) in banners" :key="index"
           class="swiper-slide">
-          <img
-            alt="banner_image"
-            :src="banner.imageUrl | setWH('375y140')" /></div>
+          <div class="image-wrapper">
+            <img
+              class="banner-image"
+              alt="banner_image"
+              :src="banner.imageUrl" />
+            <BannerTitle
+              v-if="banner.typeTitle"
+              class="banner-title"
+              :title="banner.typeTitle"
+              :type-color="banner.titleColor" />
+          </div>
+        </div>
       </div>
-      <div class="swiper-pagination banner-pagination"></div>
+      <div
+        class="swiper-pagination banner-pagination"
+        ></div>
     </div>
   </div>
 </template>
@@ -18,6 +29,8 @@
 import { getBanner } from '@/api/find'
 import Swiper from 'swiper'
 import 'swiper/dist/css/swiper.min.css'
+// COMPONENTS
+import BannerTitle from './components/banner-title/banner-title'
 
 export default {
   name: 'banner',
@@ -30,23 +43,13 @@ export default {
     this._getBanner().then(() => {
       this._initBanner()
     })
-    // this.$nextTick(() => {
-    //   // eslint-disable-next-line
-    //   let bannerSwiper = new Swiper('.banner', {
-    //     autoPlay: true,
-    //     delay: 3000,
-    //     pagination: {
-    //       el: '.banner-pagination'
-    //     }
-    //   })
-    // })
   },
   methods: {
     _getBanner () {
       return getBanner({
         type: 0
       }).then(res => {
-        console.log(res)
+        console.log('bannerRes:',  res)
         if (res.statusText === 'OK') {
           this.banners = res.data.banners
         }
@@ -55,15 +58,20 @@ export default {
       })
     },
     _initBanner () {
+      // eslint-disable-next-line
       let bannerSwiper = new Swiper('.banner', {
+        loop: true,
         autoPlay: true,
         delay: 3000,
         pagination: {
-          el: '.banner-pagination'
+          el: '.banner-pagination',
         }
       })
     }
   },
+  components: {
+    BannerTitle
+  }
 }
 </script>
 
@@ -71,10 +79,32 @@ export default {
 
   .banner {
     width: 100vw;
-    height: 120px;
   }
 
   .swiper-slide {
-    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .image-wrapper {
+    // box-sizing: border-box;
+    display: flex;
+    position: relative;
+    // border-radius: 5px;
+    overflow: hidden;
+    // width: calc(100vw - 28px);
+
+    .banner-title {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  .banner-image {
+    border-radius: 5px;
+    width: calc(100vw - 28px);
   }
 </style>

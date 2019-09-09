@@ -23,16 +23,6 @@
           id="nav"
           class="swiper-container swiper-no-swiping">
           <div class="swiper-wrapper">
-            <!-- <div
-              class="swiper-slide"
-              @click="handleClick()">
-              <span>我的</span></div>
-            <div class="swiper-slide">
-              <span style="font-size: 16px; font-weight: bold; color:rgba(51,51,51,1);">发现</span></div>
-            <div class="swiper-slide">
-              <span>云村</span></div>
-            <div class="swiper-slide">
-              <span>视频</span></div> -->
               <div
                 v-for="(tab, index) in tabs" :key="index"
                 class="swiper-slide"

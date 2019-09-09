@@ -21,14 +21,16 @@
 </template>
 
 <script>
+import Swiper from 'swiper'
+import 'swiper/dist/css/swiper.min.css'
+import 'swiper/dist/js/swiper.min.js'
+// COMPONENTS
 import TabHead from '@/components/tab-head/tab-head'
 import Mine from './views/mine/index'
 import Find from './views/find/index'
 import Cloud from './views/cloud/index'
 import Videos from './views/videos/index'
-import Swiper from 'swiper'
-import 'swiper/dist/css/swiper.min.css'
-// import 'swiper/dist/css/swiper.min.js'
+
 
 export default {
   name: 'app',
@@ -71,7 +73,7 @@ export default {
   
         },
       })
-      // eslint-disable-next-line
+
       this.pageSwiper = new Swiper('#page', {
         watchSlidesProgress: true, // 允许 watch SlidesProgress
         resistanceRatio: 0,
@@ -137,7 +139,7 @@ export default {
             }
             // 每次都保存一下activeIndex,用于下次切换时比较
             _this.activeIndex = activeIndex
-          },
+          }
         }
       })
     })
