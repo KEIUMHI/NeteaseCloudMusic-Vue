@@ -23,14 +23,26 @@
           id="nav"
           class="swiper-container swiper-no-swiping">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
+            <!-- <div
+              class="swiper-slide"
+              @click="handleClick()">
               <span>我的</span></div>
             <div class="swiper-slide">
               <span style="font-size: 16px; font-weight: bold; color:rgba(51,51,51,1);">发现</span></div>
             <div class="swiper-slide">
               <span>云村</span></div>
             <div class="swiper-slide">
-              <span>视频</span></div>
+              <span>视频</span></div> -->
+              <div
+                v-for="(tab, index) in tabs" :key="index"
+                class="swiper-slide"
+                @click="handleClick(index)">
+                <span :style="tab === '发现' ? {
+                  fontSize: '16px',
+                  fontWeight: 'bold',
+                  color: '#333'
+                } : ''">{{ tab }}</span>
+              </div>
             <!-- <div class="bar">
               <div class="color"></div>
             </div> -->
@@ -44,7 +56,22 @@
 
 <script>
 export default {
-  name: 'tab-head'
+  name: 'tab-head',
+  data () {
+    return {
+      tabs: [
+        '我的',
+        '发现',
+        '云村',
+        '视频'
+      ]
+    }
+  },
+  methods: {
+    handleClick (index) {
+      this.$emit('change', index)
+    }
+  },
 }
 </script>
 

@@ -1,9 +1,10 @@
 <template>
   <div class="find-container">
     <div class="wrap">
+      <Slider />
 
       <div class="label-options">
-        <tab-feature-item
+        <TabFeatureItem
           v-for="tab in tabFeatureItems"
           :key="tab.id"
           :styles="sameStyle"
@@ -17,6 +18,7 @@
 
 <script>
 // COMPONENTS
+import Slider from '@/components/slider/slider'
 import TabFeatureItem from '@/components/tab-feature-item/tab-feature-item'
 // eslint-disable-next-line
 import BoxShow from '@/components/box-show/box-show'
@@ -59,6 +61,7 @@ export default {
   methods: {
   },
   components: {
+    Slider,
     TabFeatureItem
   }
 }

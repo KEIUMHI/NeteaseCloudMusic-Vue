@@ -7,7 +7,7 @@
         height: styles.height,
         background: styles.background
       }">
-      <i 
+      <i
         :class="['iconfont', iconClassName]"
         :style="{ fontSize: styles.iconFontSize }"></i>
     </div>
