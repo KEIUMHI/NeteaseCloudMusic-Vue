@@ -43,3 +43,10 @@ style.color: 控制字体颜色
 style.fontSize: 控制字体大小
 style.backGround: 控制icon背景颜色
 style.iconClassName: 控制icon图标
+
+##### banner-title
+
+tow properties
+
+title: 标题名称
+typeColor: 背景颜色
