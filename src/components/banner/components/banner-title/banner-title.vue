@@ -1,14 +1,12 @@
 <template>
-  <div class="slider">
-    slider
+  <div class="banner-title">
+    banner
   </div>
 </template>
 
 <script>
-// import BScorll from 'better-scroll'
-
 export default {
-  name: 'slider'
+  name: 'banner-title'
 }
 </script>
 

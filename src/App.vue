@@ -28,7 +28,7 @@ import Cloud from './views/cloud/index'
 import Videos from './views/videos/index'
 import Swiper from 'swiper'
 import 'swiper/dist/css/swiper.min.css'
-import 'swiper/dist/js/swiper.min.js'
+// import 'swiper/dist/css/swiper.min.js'
 
 export default {
   name: 'app',
@@ -105,18 +105,18 @@ export default {
             navSwiper.slides.eq(activeIndex).find('span').css('color', 'rgba(51,51,51,1)')
             navSwiper.slides.eq(activeIndex).find('span').css('font-size', '16px')
             navSwiper.slides.eq(activeIndex).find('span').css('font-weight', 'bold')
-            // if (activeIndex > 0) {
-            //   navSwiper.slides.eq(activeIndex - 1).find('span').transition(tSpeed)
-            //   navSwiper.slides.eq(activeIndex - 1).find('span').css('color', '#999')
-            //   navSwiper.slides.eq(activeIndex - 1).find('span').css('font-size', '14px')
-            //   navSwiper.slides.eq(activeIndex - 1).find('span').css('font-weight', 'normal')
-            // }
-            // if (activeIndex < this.slides.length) {
-            //   navSwiper.slides.eq(activeIndex + 1).find('span').transition(tSpeed)
-            //   navSwiper.slides.eq(activeIndex + 1).find('span').css('color', '#999')
-            //   navSwiper.slides.eq(activeIndex + 1).find('span').css('font-size', '14px')
-            //   navSwiper.slides.eq(activeIndex + 1).find('span').css('font-weight', 'normal')
-            // }
+            if (activeIndex > 0) {
+              navSwiper.slides.eq(activeIndex - 1).find('span').transition(tSpeed)
+              navSwiper.slides.eq(activeIndex - 1).find('span').css('color', '#999')
+              navSwiper.slides.eq(activeIndex - 1).find('span').css('font-size', '14px')
+              navSwiper.slides.eq(activeIndex - 1).find('span').css('font-weight', 'normal')
+            }
+            if (activeIndex < this.slides.length) {
+              navSwiper.slides.eq(activeIndex + 1).find('span').transition(tSpeed)
+              navSwiper.slides.eq(activeIndex + 1).find('span').css('color', '#999')
+              navSwiper.slides.eq(activeIndex + 1).find('span').css('font-size', '14px')
+              navSwiper.slides.eq(activeIndex + 1).find('span').css('font-weight', 'normal')
+            }
             if (_this.activeIndex !== this.activeIndex) {
               navSwiper.slides.eq(_this.activeIndex).find('span').transition(tSpeed)
               navSwiper.slides.eq(_this.activeIndex).find('span').css('color', '#999')
@@ -135,7 +135,7 @@ export default {
             } else {
               navSwiper.setTranslate((_this.clientWidth - parseInt(_this.navSlideWidth)) / 2 - navActiveSlideLeft)
             }
-            // 每次都保存一下activeIndex,用于下次切换时
+            // 每次都保存一下activeIndex,用于下次切换时比较
             _this.activeIndex = activeIndex
           },
         }
