@@ -30,23 +30,36 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### Component Property
 
-##### tab-feature-item
+#### tab-feature-item
 
-tow properties
+**tow** properties
 
 label: 标签名称
 
-style
-style.width: 控制icon背景宽度
-style.height: 控制icon背景高度
-style.color: 控制字体颜色
-style.fontSize: 控制字体大小
-style.backGround: 控制icon背景颜色
-style.iconClassName: 控制icon图标
+- **style**
+   width: 控制icon背景宽度
+   height: 控制icon背景高度
+   color: 控制字体颜色
+   fontSize: 控制字体大小
+   backGround: 控制icon背景颜色
+   iconClassName: 控制icon图标
 
-##### banner-title
+#### banner-title
 
-tow properties
+**tow** properties
 
-title: 标题名称
-typeColor: 背景颜色
+- title: 标题名称
+- typeColor: 背景颜色
+
+#### box-show
+
+**five** properties
+
+- id: id
+- name: 标题
+- picUrl: 图片链接
+- playCount: 播放次数
+- copywriter: 编辑推荐?
+- styles
+  - width: 控制img宽度
+  - height: 控制img高度
