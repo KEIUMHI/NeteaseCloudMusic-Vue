@@ -1,8 +1,14 @@
 
 .wrap {
   padding: 0 14px;
+  /* width: calc(100vw - 28px); */
 }
-/* 分页器活动背景色 */
-.swiper-pagination-bullet-active {
-  background: #d44439 !important;
+
+.d-flex {
+  display: flex;
+}
+
+.j-a-center {
+  justify-content: center;
+  align-items: center;
 }

@@ -39,6 +39,10 @@ export default {
         }
       }
     },
+    id: {
+      type: Number,
+      required: true,
+    },
     label: {
       type: String,
       required: true,
@@ -52,7 +56,7 @@ export default {
   },
   methods: {
     _handleClick () {
-      this.$emit('tabClick')
+      this.$emit('tab-click', this.id)
     } 
   },
 }

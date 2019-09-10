@@ -39,7 +39,7 @@ export default {
       banners: []
     }
   },
-  mounted () {
+  beforeMount () {
     this._getBanner().then(() => {
       this._initBanner()
     })
@@ -63,8 +63,7 @@ export default {
         loop: true,
         autoplay: {
           delay: 5000,
-          stopOnLastSlide: false,
-          disableOnInteraction: true
+          disableOnInteraction: false
         },
         pagination: {
           el: '.banner-pagination',
@@ -92,12 +91,9 @@ export default {
   }
 
   .image-wrapper {
-    // box-sizing: border-box;
     display: flex;
     position: relative;
-    // border-radius: 5px;
     overflow: hidden;
-    // width: calc(100vw - 28px);
 
     .banner-title {
       position: absolute;
