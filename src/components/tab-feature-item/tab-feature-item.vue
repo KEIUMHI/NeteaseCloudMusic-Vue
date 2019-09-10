@@ -10,7 +10,7 @@
         background: styles.background
       }">
       <i
-        :class="['iconfont', iconClassName]"
+        :class="['iconfont', iconName]"
         :style="{ fontSize: styles.iconFontSize }"></i>
     </div>
     <div
@@ -48,7 +48,7 @@ export default {
       required: true,
       default: '每日推荐'
     },
-    iconClassName: {
+    iconName: {
       type: String,
       required: true,
       default: 'iconcalendar'

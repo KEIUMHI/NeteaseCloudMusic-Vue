@@ -7,7 +7,7 @@
           :styles="sameStyle"
           :id="tab.id"
           :label="tab.label"
-          :icon-class-name="tab.iconClassName"
+          :icon-name="tab.iconName"
           @tab-click="_tabClick" />
       </div>
   </div>
@@ -31,23 +31,23 @@ export default {
       tabFeatureItems: [{
         id:1,
         label: '每日推荐',
-        iconClassName: 'iconcalendar'
+        iconName: 'iconcalendar'
       }, {
         id:2,
         label: '歌单',
-        iconClassName: 'iconround-queue_music'
+        iconName: 'iconround-queue_music'
       }, {
         id:3,
         label: '排行榜',
-        iconClassName: 'iconicranking'
+        iconName: 'iconicranking'
       }, {
         id:4,
         label: '电台',
-        iconClassName: 'iconradio'
+        iconName: 'iconradio'
       }, {
         id:5,
         label: '直播',
-        iconClassName: 'iconicon_live_hover'
+        iconName: 'iconicon_live_hover'
       }]
     }
   },

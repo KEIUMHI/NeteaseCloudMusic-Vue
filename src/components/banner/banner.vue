@@ -18,9 +18,7 @@
           </div>
         </div>
       </div>
-      <div
-        class="swiper-pagination banner-pagination"
-        ></div>
+      <div class="swiper-pagination banner-pagination"></div>
     </div>
   </div>
 </template>

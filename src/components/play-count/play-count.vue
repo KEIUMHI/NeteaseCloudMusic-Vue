@@ -19,8 +19,9 @@ export default {
       type: Object,
       default: () => {
         return {
-          fontSize: '8px',
-          color: '#fff'
+          fontSize: '10px',
+          color: '#fff',
+          iconSize: '12px'
         }
       }
     }
@@ -40,6 +41,15 @@ export default {
 </script>
 
 <style lang="less" scoped>
+  @import "~@/assets/style/variables.less";
+  
   .paly-count {
+    font-size: @font-size-small-m;
+    color: #fff;
   }
+
+  .iconfont {
+    font-size: @font-size-small-l;
+  }
+
 </style>

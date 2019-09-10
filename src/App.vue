@@ -15,9 +15,9 @@
         <div class="swiper-slide slidepage"><Cloud /></div>
         <div class="swiper-slide slidepage"><Videos /></div>
       </div>
-  </div>
+    </div>
 
-</div>
+  </div>
 </template>
 
 <script>
