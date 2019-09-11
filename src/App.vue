@@ -23,7 +23,7 @@
 <script>
 import Swiper from 'swiper'
 import 'swiper/dist/css/swiper.min.css'
-import 'swiper/dist/js/swiper.min.js'
+import 'swiper/dist/js/swiper'
 // COMPONENTS
 import TabHead from '@/components/tab-head/tab-head'
 import Mine from './views/mine/index'
@@ -38,7 +38,7 @@ export default {
     return {
       // bar: null,
       pageSwiper: {},
-      navSum: 0,
+      // navSum: 0,
       navSlideWidth: 0,
       clientWidth: 0,
       navWidth: 0,
@@ -59,7 +59,7 @@ export default {
             // _this.bar = this.$el.find('.bar')
             // _this.bar.css('width', _this.navSlideWidth)
             // _this.bar.transition(tSpeed)
-            _this.navSum = this.slides[this.slides.length - 1].offsetLeft //最后一个slide的位置
+            // _this.navSum = this.slides[this.slides.length - 1].offsetLeft //最后一个slide的位置
   
             _this.clientWidth = parseInt(this.$wrapperEl.css('width')) //Nav的可视宽度
             _this.navWidth = this.width

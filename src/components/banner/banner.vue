@@ -27,6 +27,7 @@
 import { getBanner } from '@/api/find'
 import Swiper from 'swiper'
 import 'swiper/dist/css/swiper.min.css'
+import 'swiper/dist/js/swiper'
 // COMPONENTS
 import BannerTitle from './components/banner-title/banner-title'
 

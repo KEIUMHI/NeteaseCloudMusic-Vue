@@ -1,7 +1,7 @@
 <template>
   <div class="wrap">
     <div class="tab-head">
-      <div @click="handleMenu"><i class="iconfont iconMenu"></i></div>
+      <div @click="_handleMenu"><i class="iconfont iconMenu"></i></div>
       <div class="options">
         <div
           id="nav"
@@ -10,7 +10,7 @@
               <div
                 v-for="(tab, index) in tabs" :key="index"
                 class="swiper-slide"
-                @click="handleClick(index)">
+                @click="_handleClick(index)">
                 <span :style="tab === '发现' ? {
                   fontSize: '16px',
                   fontWeight: 'bold',
@@ -23,7 +23,7 @@
           </div>
         </div>
       </div>
-      <div @click="handleSearch"><i class="iconfont iconsearch"></i></div>
+      <div @click="_handleSearch"><i class="iconfont iconsearch"></i></div>
     </div>
   </div>
 </template>
@@ -42,14 +42,14 @@ export default {
     }
   },
   methods: {
-    handleClick (index) {
+    _handleClick (index) {
       this.$emit('change', index)
       console.log(`click tab Index:${index}`)
     },
-    handleMenu () {
+    _handleMenu () {
       console.log('click menu.')
     },
-    handleSearch () {
+    _handleSearch () {
       console.log('click search.')
     }
   },

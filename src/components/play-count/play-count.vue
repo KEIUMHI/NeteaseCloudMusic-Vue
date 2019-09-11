@@ -31,7 +31,7 @@ export default {
       if (count > 100000000) { // 大于一亿
         return `${(count / 100000000).toFixed(1)}亿`
       } else if (count > 100000) { // 大于十万
-        return `${parseInt(count / 100000)}万`
+        return `${parseInt(count / 10000)}万`
       } else { // 不然就是数字
         return count
       }
@@ -42,7 +42,7 @@ export default {
 
 <style lang="less" scoped>
   @import "~@/assets/style/variables.less";
-  
+
   .paly-count {
     font-size: @font-size-small-m;
     color: #fff;

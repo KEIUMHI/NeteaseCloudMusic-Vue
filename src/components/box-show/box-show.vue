@@ -1,23 +1,15 @@
 <template>
   <div class="box-show">
-    <div class="img_bg-container d-flex">
-      <img
-        class="img"
-        alt="recommend-music_img"
-        :src="picUrl" />
-        <PlayCount
-          v-if="playCount"
-          class="paly-count_position"
-          :count="playCount"
-        />
-    </div>
+    <SongCover
+      :pic-url="picUrl"
+      :play-count="playCount"/>
     <p class="name">{{ name }}</p>
   </div>
 </template>
 
 <script>
 // COMPONENTS
-import PlayCount from '../play-count/play-count'
+import SongCover from '../song-cover/song-cover'
 
 export default {
   name: 'box-show',
@@ -53,7 +45,7 @@ export default {
     }
   },
   components: {
-    PlayCount
+    SongCover
   }
 }
 </script>
@@ -61,26 +53,12 @@ export default {
 <style lang="less" scoped>
   @import "~@/assets/style/variables.less";
   .box-show {
+    // 28是两边padding之和、20是剩余的留白宽度之和
     width: calc((100vw - 28px - 20px) / 3);
-
-    .img_bg-container {
-      position: relative;
-
-      .img {
-        border-radius: 4px;
-        width: 100%;
-      }
-
-      .paly-count_position {
-        position: absolute;
-        top: 3px;
-        right: 3px;
-      }
-    }
   }
 
   .name {
-    font-size: @font-size-mini-l;
+    font-size: @font-size-small-m;
     color: @color-font-default;
   }
 </style>
