@@ -74,7 +74,7 @@ export default {
     },
     _getNewAlbum () {
       return getNewAlbum({
-        limit: 3
+        limit: 3 * 10
       }).then(res => {
         console.log('newAlbumRes:', res)
         if (res.statusText === 'OK') {

@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import { getVideoLales } from '@/api/find'
 // COMPONENTS
 import Banner from '@/components/banner/banner'
 import Labels from './components/labels/labels'
@@ -24,7 +25,15 @@ export default {
     return {
     }
   },
+  beforeMount () {
+    this._getVideoLabels()
+  },
   methods: {
+    _getVideoLabels () {
+      getVideoLales().then(res => {
+        console.log('videoLabesRes:', res)
+      })
+    }
   },
   components: {
     Banner,

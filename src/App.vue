@@ -3,7 +3,8 @@
 
     <TabHead
       class="tab-header"
-      @change="_tabsChange" />
+      @change="_tabsChange"
+    />
 
     <div
       id="page"
@@ -69,9 +70,9 @@ export default {
   
             // let topBar = this.$el.parents('body').find('#top') //页头
   
-          },
+          }
   
-        },
+        }
       })
 
       this.pageSwiper = new Swiper('#page', {
@@ -125,7 +126,6 @@ export default {
               navSwiper.slides.eq(_this.activeIndex).find('span').css('font-size', '14px')
               navSwiper.slides.eq(_this.activeIndex).find('span').css('font-weight', 'normal')
             }
-            // if (_this.pageIndex )
             //导航居中
             let navActiveSlideLeft = navSwiper.slides[activeIndex].offsetLeft //activeSlide距左边的距离
   
