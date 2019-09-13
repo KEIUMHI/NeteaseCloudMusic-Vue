@@ -1,6 +1,10 @@
 <template>
   <div class="login">
-    <img src="" alt="" class="logo" />
+    <img
+      class="logo"
+      alt="neteasecloudmusic_logo"
+      :src="imgs.neteaseCloudMusicLogo"
+    />
     <div class="login_phone">手机号登录</div>
     <div class="experience_immediate">立即体验</div>
     <div class="icon-container">
@@ -13,8 +17,17 @@
 </template>
 
 <script>
+// IMG
+import neteaseCloudMusicLogo from '@/assets/NeteaseCloudMusicIcon.png'
 export default {
-  name: 'login'
+  name: 'login',
+  data() {
+    return {
+      imgs: {
+        neteaseCloudMusicLogo
+      }
+    }
+  },
 }
 </script>
 
