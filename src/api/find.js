@@ -39,10 +39,18 @@ export function getNewSong (query) {
     params: query
   })
 }
-// 视频
+// 视频标签
 export function getVideoLabels () {
   return request({
     url: 'video/group/list',
     method: 'get'
+  })
+}
+// 视频标签下的视频
+export function getVideos (query) {
+  return request({
+    url: 'video/group',
+    method: 'get',
+    params: query
   })
 }
