@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { getVideoLales } from '@/api/find'
+import { getVideoLabels, getVideos } from '@/api/find'
 // COMPONENTS
 import Banner from '@/components/banner/banner'
 import Labels from './components/labels/labels'
@@ -25,12 +25,20 @@ export default {
     return {
     }
   },
-  beforeMount () {
-    this._getVideoLabels()
+  mounted () {
+    this._getVideoLabels().then(() => {
+      getVideos({
+        id: 58106
+      }).then(res => {
+        console.log('videosRes:', res)
+      }).catch(err => {
+        console.error(err.response.data.msg)
+      })
+    })
   },
   methods: {
     _getVideoLabels () {
-      getVideoLales().then(res => {
+      return getVideoLabels().then(res => {
         console.log('videoLabesRes:', res)
       })
     }
