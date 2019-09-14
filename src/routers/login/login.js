@@ -1,4 +1,4 @@
 export default {
   path: '/login',
-  component: () => import('@/views/login/login')  
+  component: () => import('@/views/login/login')
 }
