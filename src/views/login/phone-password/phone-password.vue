@@ -9,20 +9,36 @@
     <div class="mian-ctn">
       <div
         v-if="currentPage"
-        class="tip">未注册手机号登录后将自动创建账号</div>
+        class="tip_phone">未注册手机号登录后将自动创建账号</div>
       <div class="input-wrapper">
-        <input
+        <div
           v-if="currentPage"
-          v-model="phone"
-          type="text"
-          class="input"
-          placeholder="请输入手机号" />
-        <input
+          class="input-phone-wrapper">
+          <div
+            class="countrycode"
+            :style="phone ? '' : { color: '#999'}">+86</div>
+          <input
+            v-model="phone"
+            type="text"
+            class="input"
+            placeholder="请输入手机号" />
+          <div
+            v-if="phone"
+            class="clear">x</div>
+        </div>
+
+        <div
           v-else
-          v-model="password"
-          type="password"
-          class="input"
-          placeholder="请输入密码" />
+          class="input-pw-wrapper">
+          <input
+            v-model="password"
+            type="password"
+            class="input"
+            placeholder="请输入密码" />
+          <a
+            class="link link-forget-pw"
+            href="">忘记密码？</a>
+        </div>
       </div>
       <div class="btn-next" @click="_handleClick">{{ currentPage ? '下一步' : '登录' }}</div>
     </div>
@@ -49,10 +65,10 @@ export default {
         this.currentPage = 1
       }
     },
-    _handleClick (e) {
-      if (this.currentPage) {
+    _handleClick () {
+      if (this.currentPage && this.phone) {
         this.currentPage = 0
-      } else {
+      } else if (!this.currentPage) {
         this._login()
       }
       console.log(this.phone, this.password)
@@ -81,6 +97,12 @@ export default {
   .mian-ctn {
     margin: 0 auto;
     width: 90%;
+
+    .tip_phone {
+      margin: 30px 0;
+      font-size: @font-size-small-l;
+      color: @color-font-secondary;
+    }
 
     .input {
       border: none;
