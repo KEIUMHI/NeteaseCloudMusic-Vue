@@ -24,7 +24,8 @@
             placeholder="请输入手机号" />
           <div
             v-if="phone"
-            class="clear">x</div>
+            class="clear"
+            @click="clear">x</div>
         </div>
 
         <div
@@ -81,10 +82,13 @@ export default {
       }
       login(account).then(res => {
         console.log(res)
-        this.$router.push('/find')
+        this.$router.push('/app-main')
       }).catch(err => {
         console.log(err)
       })
+    },
+    clear () {
+      this.phone = ''
     }
   },
 }
@@ -106,7 +110,6 @@ export default {
 
     .input {
       border: none;
-      border-bottom: 0.5px solid #eee;
       outline: 0;
       width: 100%;
     }
@@ -124,4 +127,47 @@ export default {
     }
   }
 
+  .input-phone-wrapper,
+  .input-pw-wrapper {
+    position: relative;
+    border-bottom: 0.5px solid #000;
+  }
+
+  .input-phone-wrapper {
+    padding: 5px 35px;
+
+    .countrycode,
+    .clear {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: @color-font-secondary;
+    }
+
+    .countrycode {
+      left: 0;
+    }
+
+    .clear {
+      right: 3px;
+      font-size: @font-size-large-m;
+      font-weight: 300;
+    }
+  }
+
+  .link {
+    text-decoration: none;
+  }
+
+  .input-pw-wrapper {
+    padding-right: 72px;
+
+    .link-forget-pw {
+      position: absolute;
+      top: 50%;
+      right: 3px;
+      transform: translateY(-50%);
+      font-size: @font-size-small-l;
+    }
+  }
 </style>
