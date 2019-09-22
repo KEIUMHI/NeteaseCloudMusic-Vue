@@ -6,19 +6,23 @@
       :src="imgs.neteaseCloudMusicLogo"
     />
     <div class="main">
-      <div
-        class="btn login_phone"
-        @click="handleLogin">手机号登录</div>
-      <div
-        class="btn experience_immediate"
-        @click="handleExperience">立即体验</div>
+      <router-link
+        tag="div"
+        :to="{ name: 'phone-password' }"
+        :class="['btn', 'login_phone']">手机号登录</router-link>
+      <router-link
+        tag="div"
+        :to="{ name: 'app-main' }"
+        class="btn experience_immediate">立即体验</router-link>
       <div class="icon-container">
         <div class="icon"></div>
         <div class="icon"></div>
         <div class="icon"></div>
         <div class="icon"></div>
       </div>
-      <input type="checkbox"><span>同意</span><a class="link" href="">《用户协议》</a><span>和</span><a class="link" href="">《隐私政策》</a>
+      <div class="Treaty d-flex j-a-center">
+        <input type="checkbox"><span>同意</span><a class="link" href="">《用户协议》</a><span>和</span><a class="link" href="">《隐私政策》</a>
+      </div>
     </div>
   </div>
 </template>
@@ -32,17 +36,12 @@ export default {
     return {
       imgs: {
         neteaseCloudMusicLogo
-      }
+      },
+      phoneActive: false,
+      experienceActive: false
     }
   },
   methods: {
-    handleLogin () {
-      console.log('login by phone');
-      this.$router.push('/phone-password')
-    },
-    handleExperience () {
-      console.log('immediate');
-    }
   }
 }
 </script>
@@ -86,6 +85,15 @@ export default {
         margin-bottom: 14px;
         color: @color-theme-default;
         background: #fff;
+
+        &.acitve {
+          background: @color-theme-default;
+          opacity: .3;
+        }
+
+        &.router-link-active {
+          background: #000;
+        }
       }
 
       &.experience_immediate {
@@ -115,6 +123,10 @@ export default {
     .link {
       font-size: @font-size-small-l;
       text-decoration: none;
+    }
+
+    .Treaty {
+      margin: 12px 0;
     }
   }
 </style>

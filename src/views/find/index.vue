@@ -32,7 +32,7 @@ export default {
       }).then(res => {
         console.log('videosRes:', res)
       }).catch(err => {
-        console.error(err.response.data.msg)
+        console.error('getVideo', err.response)
       })
     })
   },

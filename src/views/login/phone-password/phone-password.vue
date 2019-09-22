@@ -25,7 +25,7 @@
           <div
             v-if="phone"
             class="clear"
-            @click="clear">x</div>
+            @click="phone = ''">x</div>
         </div>
 
         <div
@@ -48,6 +48,7 @@
 
 <script>
 import { login } from '@/api/login'
+// import { setCookies } from '@/utils/auth'
 
 export default {
   name: 'phone-password',
@@ -81,14 +82,14 @@ export default {
         password: this.password
       }
       login(account).then(res => {
-        console.log(res)
+        console.log('login-success-res:', res)
+        // let tokenJsonStr = JSON.parse(res.data.bindings[0].tokenJsonStr)
+        // JSON.parse('')
+        // setCookies('Access-Token', tokenJsonStr)
         this.$router.push('/app-main')
       }).catch(err => {
         console.log(err)
       })
-    },
-    clear () {
-      this.phone = ''
     }
   },
 }
@@ -97,6 +98,10 @@ export default {
 <style lang="less" scoped>
   @import "~@/assets/style/variables.less";
   .phone-password {}
+
+  .back {
+    display: flex;
+  }
 
   .mian-ctn {
     margin: 0 auto;

@@ -4,7 +4,14 @@ import request from '@/utils/request'
 export function login (query) {
   return request({
     url: 'login/cellphone',
-    method: 'get',
+    method: 'post',
     params: query
+  })
+}
+// 登陆状态 判断是否已登陆
+export function loginStatus () {
+  return request({
+    url: 'login/status',
+    method: 'get'
   })
 }
