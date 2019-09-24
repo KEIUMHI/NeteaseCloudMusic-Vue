@@ -83,9 +83,6 @@ export default {
       }
       login(account).then(res => {
         console.log('login-success-res:', res)
-        // let tokenJsonStr = JSON.parse(res.data.bindings[0].tokenJsonStr)
-        // JSON.parse('')
-        // setCookies('Access-Token', tokenJsonStr)
         this.$router.push('/app-main')
       }).catch(err => {
         console.log(err)
