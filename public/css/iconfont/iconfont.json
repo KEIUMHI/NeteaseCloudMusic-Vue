@@ -1,0 +1,191 @@
+{
+  "id": "1392384",
+  "name": "neteasecloudmusic-vue",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "伪网易云app",
+  "glyphs": [
+    {
+      "icon_id": "286976",
+      "name": "download",
+      "font_class": "download",
+      "unicode": "e651",
+      "unicode_decimal": 58961
+    },
+    {
+      "icon_id": "448690",
+      "name": "music",
+      "font_class": "music",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "448704",
+      "name": "music",
+      "font_class": "music1",
+      "unicode": "e627",
+      "unicode_decimal": 58919
+    },
+    {
+      "icon_id": "562667",
+      "name": "back",
+      "font_class": "back1",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    },
+    {
+      "icon_id": "562697",
+      "name": "Play",
+      "font_class": "play1",
+      "unicode": "e62a",
+      "unicode_decimal": 58922
+    },
+    {
+      "icon_id": "766689",
+      "name": "date",
+      "font_class": "calendar",
+      "unicode": "e697",
+      "unicode_decimal": 59031
+    },
+    {
+      "icon_id": "924819",
+      "name": "ic_ranking",
+      "font_class": "icranking",
+      "unicode": "e68b",
+      "unicode_decimal": 59019
+    },
+    {
+      "icon_id": "1313882",
+      "name": "排名靠前-01",
+      "font_class": "paimingkaoqian-01",
+      "unicode": "e634",
+      "unicode_decimal": 58932
+    },
+    {
+      "icon_id": "1624973",
+      "name": "icon_live_hover",
+      "font_class": "icon_live_hover",
+      "unicode": "e69b",
+      "unicode_decimal": 59035
+    },
+    {
+      "icon_id": "1911661",
+      "name": "CHAT",
+      "font_class": "CHAT",
+      "unicode": "e702",
+      "unicode_decimal": 59138
+    },
+    {
+      "icon_id": "2041713",
+      "name": "CN_NetEase music",
+      "font_class": "CN_NetEasemusic",
+      "unicode": "e658",
+      "unicode_decimal": 58968
+    },
+    {
+      "icon_id": "4352729",
+      "name": "right",
+      "font_class": "right",
+      "unicode": "e63a",
+      "unicode_decimal": 58938
+    },
+    {
+      "icon_id": "5102979",
+      "name": "nav_serch_icon",
+      "font_class": "search",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "5127529",
+      "name": "station",
+      "font_class": "station",
+      "unicode": "e822",
+      "unicode_decimal": 59426
+    },
+    {
+      "icon_id": "5747655",
+      "name": "like",
+      "font_class": "like",
+      "unicode": "e729",
+      "unicode_decimal": 59177
+    },
+    {
+      "icon_id": "5875533",
+      "name": "play",
+      "font_class": "play",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    },
+    {
+      "icon_id": "6626177",
+      "name": "Menu",
+      "font_class": "Menu",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "6986986",
+      "name": "radio",
+      "font_class": "radio",
+      "unicode": "e905",
+      "unicode_decimal": 59653
+    },
+    {
+      "icon_id": "7372018",
+      "name": "round-queue_music-24",
+      "font_class": "round-queue_music",
+      "unicode": "e6ed",
+      "unicode_decimal": 59117
+    },
+    {
+      "icon_id": "7594159",
+      "name": "24gf-playlist2",
+      "font_class": "24gf-playlist2",
+      "unicode": "ea83",
+      "unicode_decimal": 60035
+    },
+    {
+      "icon_id": "7683684",
+      "name": "back",
+      "font_class": "back",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "7684998",
+      "name": "back",
+      "font_class": "back2",
+      "unicode": "e6db",
+      "unicode_decimal": 59099
+    },
+    {
+      "icon_id": "8017577",
+      "name": "jplayer",
+      "font_class": "jplayer",
+      "unicode": "e6c1",
+      "unicode_decimal": 59073
+    },
+    {
+      "icon_id": "8494282",
+      "name": "Personnel_collection",
+      "font_class": "Personnel_collection",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "8989489",
+      "name": "add",
+      "font_class": "add",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "9358584",
+      "name": "arrow",
+      "font_class": "arrow",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    }
+  ]
+}
