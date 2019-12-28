@@ -1,20 +1,22 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import { loginStatus } from '@/api/login'
+import {
+  loginStatus
+} from '@/api/login'
 
-import loginRouter from './login/login'
-import phonePasswordRouter from './phone-password/phone-password'
-import appMainRouter from './app-main/app-main'
+import loginRouter from './login/index'
+import checkingRouter from './checking/index'
+import indexRouter from './index/index'
 
 Vue.use(Router)
 
-const router = new Router ({
+const router = new Router({
   mode: 'history',
   path: process.env.BASE_URL,
   routes: [
     loginRouter,
-    phonePasswordRouter,
-    appMainRouter
+    checkingRouter,
+    indexRouter
   ]
 })
 /**
@@ -24,7 +26,7 @@ const router = new Router ({
  */
 router.beforeEach((to, from, next) => {
   if (to.name !== 'login') {
-    if (from.name === 'login' && to.name === 'phone-password') {
+    if (from.name === 'login' && to.name === 'checking') {
       next()
     } else {
       loginStatus().then(res => {

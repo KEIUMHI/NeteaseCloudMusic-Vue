@@ -32,7 +32,7 @@
     opacity: .88;
 
     &.red {
-      background: @color-theme-default;
+      background: @color-theme-main;
     }
 
     &.blue {

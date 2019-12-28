@@ -1,5 +1,5 @@
 <template>
-  <div class="phone-password">
+  <div class="checking">
     <div class="back">
       <div
         class="btn-back"
@@ -51,7 +51,7 @@ import { login } from '@/api/login'
 // import { setCookies } from '@/utils/auth'
 
 export default {
-  name: 'phone-password',
+  name: 'checking',
   data() {
     return {
       phone: '',
@@ -83,7 +83,7 @@ export default {
       }
       login(account).then(res => {
         console.log('login-success-res:', res)
-        this.$router.push('/app-main')
+        this.$router.push('/index')
       }).catch(err => {
         console.log(err)
       })
@@ -94,7 +94,7 @@ export default {
 
 <style lang="less" scoped>
   @import "~@/assets/style/variables.less";
-  .phone-password {}
+  .checking {}
 
   .back {
     display: flex;
@@ -125,7 +125,7 @@ export default {
       font-weight: 200;
       text-align: center;
       color: #fff;
-      background: @color-theme-default;
+      background: @color-theme-main;
     }
   }
 

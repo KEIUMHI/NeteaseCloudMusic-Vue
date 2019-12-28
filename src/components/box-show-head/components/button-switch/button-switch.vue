@@ -65,7 +65,7 @@ export default {
     &.current {
       font-size: @font-size-medium-b;
       font-weight: 500;
-      color: @color-font-black;
+      color: @color-black;
     }
 
     &:first-child {
