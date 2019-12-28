@@ -47,7 +47,7 @@ module.exports = {
         allowImportExportEverywhere: false
     },
     plugins: ['vue'],
-    "globals": {
+    globals: {
         "window": true,
         "document": true,
         "console": true

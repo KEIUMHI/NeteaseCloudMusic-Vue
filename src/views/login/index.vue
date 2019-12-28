@@ -1,8 +1,10 @@
 <template>
   <div class="login">
+
     <img class="logo"
          alt="neteasecloudmusic_logo"
-         :src="imgs.neteaseCloudMusicLogo" />
+         :src="require('@/assets/NeteaseCloudMusicIcon.png')" />
+
     <div class="main">
       <router-link tag="div"
                    :to="{ name: 'checking' }"
@@ -10,7 +12,8 @@
       <router-link tag="div"
                    :to="{ name: 'index' }"
                    class="btn experience_immediate">立即体验</router-link>
-      <div class="Treaty d-flex j-a-center">
+
+      <div class="treaty d-flex j-a-center">
         <input type="checkbox"><span>同意</span><a class="link"
            href="">《用户协议》</a><span>和</span><a class="link"
            href="">《隐私政策》</a>
@@ -20,15 +23,10 @@
 </template>
 
 <script>
-// IMG
-import neteaseCloudMusicLogo from '@/assets/NeteaseCloudMusicIcon.png'
 export default {
   name: 'login',
   data() {
     return {
-      imgs: {
-        neteaseCloudMusicLogo
-      },
       phoneActive: false,
       experienceActive: false
     }
@@ -103,7 +101,7 @@ export default {
     text-decoration: none;
   }
 
-  .Treaty {
+  .treaty {
     margin: 12px 0;
   }
 }
