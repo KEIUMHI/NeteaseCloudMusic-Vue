@@ -1,13 +1,11 @@
 <template>
   <div class="song-cover d-flex">
-    <img
-      class="img"
-      alt="recommend-music_img"
-      :src="picUrl" />
-    <PlayCount
-      v-if="playCount"
-      class="paly-count_position"
-      :count="playCount" />
+    <img class="img"
+         alt="recommend-music_img"
+         :src="picUrl" />
+    <PlayCount v-if="playCount"
+               class="paly-count_position"
+               :count="playCount" />
   </div>
 </template>
 
@@ -16,6 +14,9 @@ import PlayCount from '../play-count/play-count'
 
 export default {
   name: 'song-cover',
+  components: {
+    PlayCount
+  },
   props: {
     picUrl: {
       type: String,
@@ -25,26 +26,23 @@ export default {
       type: [String, Number],
       default: null
     }
-  },
-  components: {
-    PlayCount
   }
 }
 </script>
 
 <style lang="less" scoped>
-  .song-cover {
-      position: relative;
+.song-cover {
+  position: relative;
 
-      .img {
-        border-radius: 4px;
-        width: 100%;
-      }
+  .img {
+    border-radius: 4px;
+    width: 100%;
+  }
 
-      .paly-count_position {
-        position: absolute;
-        top: 3px;
-        right: 3px;
-      }
-    }
+  .paly-count_position {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+  }
+}
 </style>

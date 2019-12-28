@@ -21,11 +21,16 @@ import Recommend from './components/recommend/recommend'
 
 export default {
   name: 'find',
-  data () {
+  components: {
+    Banner,
+    Labels,
+    Recommend
+  },
+  data() {
     return {
     }
   },
-  mounted () {
+  mounted() {
     this._getVideoLabels().then(() => {
       getVideos({
         id: 58106
@@ -37,20 +42,14 @@ export default {
     })
   },
   methods: {
-    _getVideoLabels () {
+    _getVideoLabels() {
       return getVideoLabels().then(res => {
         console.log('videoLabesRes:', res)
       })
     }
-  },
-  components: {
-    Banner,
-    Labels,
-    Recommend
   }
 }
 </script>
 
 <style lang="less" scoped>
-
 </style>

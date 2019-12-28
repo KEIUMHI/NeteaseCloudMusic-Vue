@@ -1,16 +1,13 @@
 <template>
   <div class="box-show-head d-flex">
-    <div
-      v-if="!buttonSwitch"
-      class="title">{{ title }}</div>
-    <ButtonSwitch
-      v-else
-      :name-main="switchNameMain"
-      :name-secondary="switchNameSed"
-      @change="_change" />
-    <ButtonExpand
-      v-if="more"
-      :content="more" />
+    <div v-if="!buttonSwitch"
+         class="title">{{ title }}</div>
+    <ButtonSwitch v-else
+                  :name-main="switchNameMain"
+                  :name-secondary="switchNameSed"
+                  @change="_change" />
+    <ButtonExpand v-if="more"
+                  :content="more" />
   </div>
 </template>
 
@@ -20,6 +17,10 @@ import ButtonSwitch from './components/button-switch/button-switch'
 
 export default {
   name: 'box-show-head',
+  components: {
+    ButtonExpand,
+    ButtonSwitch
+  },
   props: {
     title: {
       type: String,
@@ -43,28 +44,24 @@ export default {
     }
   },
   methods: {
-    _change (isCurrent) {
+    _change(isCurrent) {
       this.$emit('change', isCurrent)
     }
-  },
-  components: {
-    ButtonExpand,
-    ButtonSwitch
   }
 }
 </script>
 
 <style lang="less" scoped>
-  @import "~@/assets/style/variables.less";
-  .title {
-    font-size: @font-size-medium-b;
-    font-weight: 500;
-    color: @color-black;
-  }
-  
-  .box-show-head {
-    margin: 12px 0;
-    justify-content: space-between;
-    align-items: center;
-  }
+@import "~@/assets/style/variables.less";
+.title {
+  font-size: @font-size-medium-b;
+  font-weight: 500;
+  color: @color-black;
+}
+
+.box-show-head {
+  margin: 12px 0;
+  justify-content: space-between;
+  align-items: center;
+}
 </style>

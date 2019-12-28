@@ -1,38 +1,32 @@
 <template>
-<div class="wrap">
-  <div class="recommend">
+  <div class="wrap">
+    <div class="recommend">
 
-    <BoxShowHead
-      title="推荐歌单"
-      more="歌单广场"
-    />
-    <div class="recommend-music-container">
-      <BoxShow
-        v-for="recommendMusic in recommendMusicList" :key="recommendMusic.id"
-        :id="recommendMusic.id"
-        :name="recommendMusic.name"
-        :pic-url="recommendMusic.picUrl"
-        :play-count="recommendMusic.playCount"
-      />
-    </div>
+      <BoxShowHead title="推荐歌单"
+                   more="歌单广场" />
+      <div class="recommend-music-container">
+        <BoxShow v-for="recommendMusic in recommendMusicList"
+                 :id="recommendMusic.id"
+                 :key="recommendMusic.id"
+                 :name="recommendMusic.name"
+                 :pic-url="recommendMusic.picUrl"
+                 :play-count="recommendMusic.playCount" />
+      </div>
 
-    <BoxShowHead
-      :button-switch="true"
-      switch-name-main="新碟"
-      switch-name-sed="新歌"
-      :more="currentSwitch === 0 ? '更多新碟' : '新歌推荐'"
-      @change="_handleSwitchChange"
-    />
-    <div class="music-new-switch-container">
-      <BoxShow
-        v-for="(newMusic, index) in newMusicList" :key="index"
-        :id="newMusic.id"
-        :name="newMusic.name"
-        :pic-url="currentSwitch === 0 ? newMusic.picUrl : newMusic.song.album.picUrl"
-      />
+      <BoxShowHead :button-switch="true"
+                   switch-name-main="新碟"
+                   switch-name-sed="新歌"
+                   :more="currentSwitch === 0 ? '更多新碟' : '新歌推荐'"
+                   @change="_handleSwitchChange" />
+      <div class="music-new-switch-container">
+        <BoxShow v-for="(newMusic, index) in newMusicList"
+                 :id="newMusic.id"
+                 :key="index"
+                 :name="newMusic.name"
+                 :pic-url="currentSwitch === 0 ? newMusic.picUrl : newMusic.song.album.picUrl" />
+      </div>
     </div>
   </div>
-</div>
 </template>
 
 <script>
@@ -47,20 +41,24 @@ import BoxShowHead from '@/components/box-show-head/box-show-head'
 
 export default {
   name: 'recommend',
-  data () {
+  components: {
+    BoxShow,
+    BoxShowHead
+  },
+  data() {
     return {
       recommendMusicList: [],
       newMusicList: [],
       currentSwitch: 0
     }
   },
-  beforeMount () {
+  beforeMount() {
     this._getRecommendMusic()
     this._getNewAlbum()
     this._getRecommendNewSong()
   },
   methods: {
-    _getRecommendMusic () {
+    _getRecommendMusic() {
       getRecommendMusic({
         limit: 6
       }).then(res => {
@@ -72,7 +70,7 @@ export default {
         console.log(err)
       })
     },
-    _getNewAlbum () {
+    _getNewAlbum() {
       return getNewAlbum({
         limit: 3 * 10
       }).then(res => {
@@ -83,7 +81,7 @@ export default {
         }
       })
     },
-    _getRecommendNewSong () {
+    _getRecommendNewSong() {
       getRecommendNewSong().then(res => {
         console.log('recommendNewSong:', res)
         if (res.statusText === 'OK') {
@@ -95,7 +93,7 @@ export default {
         }
       })
     },
-    _handleSwitchChange (currentSwitch) {
+    _handleSwitchChange(currentSwitch) {
       this.currentSwitch = currentSwitch
       if (currentSwitch === 0) {
         this.newMusicList = JSON.parse(window.localStorage.getItem('NEW_ALBUM'))
@@ -104,19 +102,15 @@ export default {
         this.newMusicList = JSON.parse(window.localStorage.getItem('RECOMMEND_NEW_SONG'))
       }
     }
-  },
-  components: {
-    BoxShow,
-    BoxShowHead
   }
 }
 </script>
 
 <style lang="less" scoped>
-  .recommend-music-container,
-  .music-new-switch-container {
-    display: flex;
-    flex-flow: wrap;
-    justify-content: space-between;
-  }
+.recommend-music-container,
+.music-new-switch-container {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+}
 </style>

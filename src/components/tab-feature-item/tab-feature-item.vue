@@ -1,21 +1,17 @@
 <template>
-  <div
-    class="tab-feature-item"
-    @click="_handleClick">
-    <div
-      class="icon"
-      :style="{
+  <div class="tab-feature-item"
+       @click="_handleClick">
+    <div class="icon"
+         :style="{
         width: styles.width,
         height: styles.height,
         background: styles.background
       }">
-      <i
-        :class="['iconfont', iconName]"
-        :style="{ fontSize: styles.iconFontSize }"></i>
+      <i :class="['iconfont', iconName]"
+         :style="{ fontSize: styles.iconFontSize }"></i>
     </div>
-    <div
-      class="label"
-      :style="{
+    <div class="label"
+         :style="{
         fontSize: styles.fontSize,
         color: styles.color
       }">{{ label }}</div>
@@ -55,30 +51,30 @@ export default {
     }
   },
   methods: {
-    _handleClick () {
+    _handleClick() {
       this.$emit('tab-click', this.id)
-    } 
+    }
   },
 }
 </script>
 
 <style lang="less" scoped>
-  .tab-feature-item {
-    display: inline-block;
-    text-align: center;
-  }
+.tab-feature-item {
+  display: inline-block;
+  text-align: center;
+}
 
-  .icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    margin: 0 auto;
-    color: #fff;
-  }
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin: 0 auto;
+  color: #fff;
+}
 
-  .label {
-    margin-top: 8px;
-  }
+.label {
+  margin-top: 8px;
+}
 </style>
 

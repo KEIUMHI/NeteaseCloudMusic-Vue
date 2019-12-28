@@ -28,16 +28,16 @@ export default {
 </script>
 
 <style lang="less" scoped>
-  .mine-item {
-    padding: 15px 0;
-  }
+.mine-item {
+  padding: 15px 0;
+}
 
-  .icon {
-    margin: 0 20px;
-    width: 30px;
-  }
+.icon {
+  margin: 0 20px;
+  width: 30px;
+}
 
-  .name-wrapper {
-    border-bottom: 1px solid #777;
-  }
+.name-wrapper {
+  border-bottom: 1px solid #777;
+}
 </style>

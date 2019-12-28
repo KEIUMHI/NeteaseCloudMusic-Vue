@@ -10,10 +10,10 @@
 </script>
 
 <style lang="less">
-  @import "~@/assets/style/variables.less";
+@import "~@/assets/style/variables.less";
 
-  #app {
-    margin: 0;
-    padding: 0;
-  }
+#app {
+  margin: 0;
+  padding: 0;
+}
 </style>

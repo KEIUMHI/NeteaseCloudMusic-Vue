@@ -1,14 +1,10 @@
 <template>
   <div class="button-switch d-flex">
-    <div
-      class="name name_main"
-      :class="{ current: isCurrent === 0 }"
-      @click="_handleClick">{{ nameMain }}</div>
+    <div :class="['name', 'name_main', {current: isCurrent === 0}]"
+         @click="_handleClick">{{ nameMain }}</div>
     <div class="dividing-line"></div>
-    <div
-      class="name name_secondary"
-      :class="{ current: isCurrent === 1 }"
-      @click="_handleClick">{{ nameSecondary }}</div>
+    <div :class="['name', 'name_secondary', {current: isCurrent === 1}]"
+         @click="_handleClick">{{ nameSecondary }}</div>
   </div>
 </template>
 
@@ -31,7 +27,7 @@ export default {
     }
   },
   methods: {
-    _handleClick (e) {
+    _handleClick(e) {
       let name = e.target.textContent
       switch (name) {
         case this.nameMain:
@@ -51,34 +47,34 @@ export default {
 </script>
 
 <style lang="less" scoped>
-  @import "~@/assets/style/variables.less";
+@import "~@/assets/style/variables.less";
 
-  .button-switch {
-    justify-content: center;
-    align-items: center;
+.button-switch {
+  justify-content: center;
+  align-items: center;
+}
+
+.name {
+  font-size: @font-size-small-l;
+  color: @color-font-secondary;
+
+  &.current {
+    font-size: @font-size-medium-b;
+    font-weight: 500;
+    color: @color-black;
   }
 
-  .name {
-    font-size: @font-size-small-l;
-    color: @color-font-secondary;
-
-    &.current {
-      font-size: @font-size-medium-b;
-      font-weight: 500;
-      color: @color-black;
-    }
-
-    &:first-child {
-      margin-right: 8px;
-    }
-
-    &:last-child {
-      margin-left: 8px;
-    }
+  &:first-child {
+    margin-right: 8px;
   }
 
-  .dividing-line {
-    border: .5px solid #eee;
-    height: 14px;
+  &:last-child {
+    margin-left: 8px;
   }
+}
+
+.dividing-line {
+  border: 0.5px solid #eee;
+  height: 14px;
+}
 </style>

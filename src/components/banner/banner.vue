@@ -2,19 +2,17 @@
   <div class="banner">
     <div class="swiper-container banner">
       <div class="swiper-wrapper">
-        <div
-          v-for="(banner, index) in banners" :key="index"
-          class="swiper-slide">
+        <div v-for="(banner, index) in banners"
+             :key="index"
+             class="swiper-slide">
           <div class="image-wrapper">
-            <img
-              class="banner-image"
-              alt="banner_image"
-              :src="banner.imageUrl" />
-            <BannerTitle
-              v-if="banner.typeTitle"
-              class="banner-title"
-              :title="banner.typeTitle"
-              :type-color="banner.titleColor" />
+            <img class="banner-image"
+                 alt="banner_image"
+                 :src="banner.imageUrl" />
+            <BannerTitle v-if="banner.typeTitle"
+                         class="banner-title"
+                         :title="banner.typeTitle"
+                         :type-color="banner.titleColor" />
           </div>
         </div>
       </div>
@@ -33,22 +31,25 @@ import BannerTitle from './components/banner-title/banner-title'
 
 export default {
   name: 'banner',
-  data () {
+  components: {
+    BannerTitle
+  },
+  data() {
     return {
       banners: []
     }
   },
-  beforeMount () {
+  beforeMount() {
     this._getBanner().then(() => {
       this._initBanner()
     })
   },
   methods: {
-    _getBanner () {
+    _getBanner() {
       return getBanner({
         type: 0
       }).then(res => {
-        console.log('bannerRes:',  res)
+        console.log('bannerRes:', res)
         if (res.statusText === 'OK') {
           this.banners = res.data.banners
         }
@@ -56,7 +57,7 @@ export default {
         console.log(err)
       })
     },
-    _initBanner () {
+    _initBanner() {
       // eslint-disable-next-line
       let bannerSwiper = new Swiper('.banner', {
         loop: true,
@@ -69,40 +70,36 @@ export default {
         }
       })
     }
-  },
-  components: {
-    BannerTitle
   }
 }
 </script>
 
 <style lang="less" scoped>
+.banner {
+  width: 100vw;
+}
 
-  .banner {
-    width: 100vw;
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.image-wrapper {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+
+  .banner-title {
+    position: absolute;
+    right: 0;
+    bottom: 0;
   }
+}
 
-  .swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-
-  .image-wrapper {
-    display: flex;
-    position: relative;
-    overflow: hidden;
-
-    .banner-title {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-    }
-  }
-
-  .banner-image {
-    border-radius: 5px;
-    width: calc(100vw - 28px);
-  }
+.banner-image {
+  border-radius: 5px;
+  width: calc(100vw - 28px);
+}
 </style>

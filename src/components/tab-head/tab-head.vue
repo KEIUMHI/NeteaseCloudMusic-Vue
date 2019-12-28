@@ -3,20 +3,19 @@
     <div class="tab-head">
       <div @click="_handleMenu"><i class="iconfont iconMenu"></i></div>
       <div class="options">
-        <div
-          id="nav"
-          class="swiper-container swiper-no-swiping">
+        <div id="nav"
+             class="swiper-container swiper-no-swiping">
           <div class="swiper-wrapper">
-              <div
-                v-for="(tab, index) in tabs" :key="index"
-                class="swiper-slide"
-                @click="_handleClick(index)">
-                <span :style="tab === '发现' ? {
+            <div v-for="(tab, index) in tabs"
+                 :key="index"
+                 class="swiper-slide"
+                 @click="_handleClick(index)">
+              <span :style="tab === '发现' ? {
                   fontSize: '16px',
                   fontWeight: 'bold',
                   color: '#333'
                 } : ''">{{ tab }}</span>
-              </div>
+            </div>
             <!-- <div class="bar">
               <div class="color"></div>
             </div> -->
@@ -31,7 +30,7 @@
 <script>
 export default {
   name: 'tab-head',
-  data () {
+  data() {
     return {
       tabs: [
         '我的',
@@ -42,14 +41,14 @@ export default {
     }
   },
   methods: {
-    _handleClick (index) {
+    _handleClick(index) {
       this.$emit('change', index)
       console.log(`click tab Index:${index}`)
     },
-    _handleMenu () {
+    _handleMenu() {
       console.log('click menu.')
     },
-    _handleSearch () {
+    _handleSearch() {
       console.log('click search.')
     }
   },
@@ -57,42 +56,42 @@ export default {
 </script>
 
 <style lang="less" scoped>
-  @import "~@/assets/style/variables.less";
+@import "~@/assets/style/variables.less";
 
-  .tab-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+.tab-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  .more,
-  .search {
-    width: 20%;
-  }
+.more,
+.search {
+  width: 20%;
+}
 
-  .options {
-    display: flex;
-    justify-content: space-around;
-    width: 60%;
+.options {
+  display: flex;
+  justify-content: space-around;
+  width: 60%;
 
-    #nav {
+  #nav {
+    width: 100%;
+
+    .swiper-wrapper {
       width: 100%;
+      display: flex;
+      justify-content: space-around;
+    }
 
-      .swiper-wrapper {
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-      }
-
-      .swiper-slide {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 25%;
-        font-size: @font-size-medium;
-        text-align: center;
-        color: #999;
-      }
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 25%;
+      font-size: @font-size-medium;
+      text-align: center;
+      color: #999;
     }
   }
+}
 </style>

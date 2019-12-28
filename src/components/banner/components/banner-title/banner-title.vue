@@ -5,38 +5,38 @@
 </template>
 
 <script>
-  export default {
-    name: 'banner-title',
-    props: {
-      title: {
-        type: String,
-        default: '独家'
-      },
-      typeColor: {
-        type: String,
-        default: 'red' // 十六进制、rgba、colorName
-      }
+export default {
+  name: 'banner-title',
+  props: {
+    title: {
+      type: String,
+      default: '独家'
+    },
+    typeColor: {
+      type: String,
+      default: 'red' // 十六进制、rgba、colorName
     }
   }
+}
 </script>
 
 <style lang="less" scoped>
-  @import "~@/assets/style/variables.less";
+@import "~@/assets/style/variables.less";
 
-  .banner-title {
-    padding: 4px 5px;
-    border-top-left-radius: 4px;
-    border-bottom-right-radius: 5px;
-    font-size: @font-size-small-m;
-    color: #fff;
-    opacity: .88;
+.banner-title {
+  padding: 4px 5px;
+  border-top-left-radius: 4px;
+  border-bottom-right-radius: 5px;
+  font-size: @font-size-small-m;
+  color: #fff;
+  opacity: 0.88;
 
-    &.red {
-      background: @color-theme-main;
-    }
-
-    &.blue {
-      background: #0984e3;
-    }
+  &.red {
+    background: @color-theme-main;
   }
+
+  &.blue {
+    background: #0984e3;
+  }
+}
 </style>

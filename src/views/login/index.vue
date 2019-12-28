@@ -1,35 +1,19 @@
 <template>
   <div class="login">
-    <img
-      class="logo"
-      alt="neteasecloudmusic_logo"
-      :src="imgs.neteaseCloudMusicLogo"
-    />
+    <img class="logo"
+         alt="neteasecloudmusic_logo"
+         :src="imgs.neteaseCloudMusicLogo" />
     <div class="main">
-      <router-link
-        tag="div"
-        :to="{ name: 'checking' }"
-        :class="['btn', 'login_phone']"
-      >手机号登录</router-link>
-      <router-link
-        tag="div"
-        :to="{ name: 'index' }"
-        class="btn experience_immediate"
-      >立即体验</router-link>
-      <!-- <div class="icon-container">
-        <div class="icon"></div>
-        <div class="icon"></div>
-        <div class="icon"></div>
-        <div class="icon"></div>
-      </div> -->
+      <router-link tag="div"
+                   :to="{ name: 'checking' }"
+                   :class="['btn', 'login_phone']">手机号登录</router-link>
+      <router-link tag="div"
+                   :to="{ name: 'index' }"
+                   class="btn experience_immediate">立即体验</router-link>
       <div class="Treaty d-flex j-a-center">
-        <input type="checkbox"><span>同意</span><a
-          class="link"
-          href=""
-        >《用户协议》</a><span>和</span><a
-          class="link"
-          href=""
-        >《隐私政策》</a>
+        <input type="checkbox"><span>同意</span><a class="link"
+           href="">《用户协议》</a><span>和</span><a class="link"
+           href="">《隐私政策》</a>
       </div>
     </div>
   </div>
@@ -40,7 +24,7 @@
 import neteaseCloudMusicLogo from '@/assets/NeteaseCloudMusicIcon.png'
 export default {
   name: 'login',
-  data () {
+  data() {
     return {
       imgs: {
         neteaseCloudMusicLogo
@@ -109,20 +93,6 @@ export default {
       background: transparent;
     }
   }
-
-  // .icon-container {
-  //   display: flex;
-  //   justify-content: space-around;
-  //   margin: 0 auto;
-
-  //   .icon {
-  //     display: inline-block;
-  //     border-radius: 50%;
-  //     width: 30px;
-  //     height: 30px;
-  //     border: 0.5px solid #fff;
-  //   }
-  // }
 
   span {
     font-size: @font-size-small-b;
