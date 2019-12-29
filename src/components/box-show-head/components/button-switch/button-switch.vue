@@ -55,13 +55,13 @@ export default {
 }
 
 .name {
-  font-size: @font-size-small-l;
-  color: @color-font-secondary;
+  font-size: @font-size-small;
+  color: #777;
 
   &.current {
-    font-size: @font-size-medium-b;
+    font-size: @font-size-medium;
     font-weight: 500;
-    color: @color-black;
+    color: @color-text-black;
   }
 
   &:first-child {

@@ -1,19 +1,19 @@
 <template>
   <div class="login">
 
-    <img class="logo"
-         alt="neteasecloudmusic_logo"
+    <img class="login__logo"
+         alt="logo"
          :src="require('@/assets/NeteaseCloudMusicIcon.png')" />
 
-    <div class="main">
-      <router-link tag="div"
-                   :to="{ name: 'checking' }"
-                   :class="['btn', 'login_phone']">手机号登录</router-link>
-      <router-link tag="div"
-                   :to="{ name: 'index' }"
-                   class="btn experience_immediate">立即体验</router-link>
+    <div class="login__main">
+      <router-link class="login__btn login__btn--phone"
+                   tag="div"
+                   :to="{ name: 'checking' }">手机号登录</router-link>
+      <router-link class="login__btn login__btn--exp"
+                   tag="div"
+                   :to="{ name: 'index' }">立即体验</router-link>
 
-      <div class="treaty d-flex j-a-center">
+      <div class="login__treaty d-flex j-a-center">
         <input type="checkbox"><span>同意</span><a class="link"
            href="">《用户协议》</a><span>和</span><a class="link"
            href="">《隐私政策》</a>
@@ -31,78 +31,63 @@ export default {
       experienceActive: false
     }
   },
-  methods: {
-  }
+  methods: {}
 }
 </script>
 
 <style lang="less" scoped>
 @import "~@/assets/style/variables.less";
+
 .login {
   height: 100vh;
   text-align: center;
-  background: @color-theme-main;
-}
+  background: @color-primary;
 
-.logo {
-  position: absolute;
-  border-radius: 50%;
-  width: 80px;
-  height: 80px;
-  top: 24%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.main {
-  position: absolute;
-  bottom: 0;
-  width: 100vw;
-
-  .btn,
-  .icon-container {
-    width: calc(100vw - 100px);
+  &__logo {
+    position: absolute;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    top: 24%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
-  .btn {
+  &__main {
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+  }
+
+  &__btn {
+    width: 70%;
     margin: 0 auto 24px;
     padding: 10px;
     border: 0.5px solid #fff;
     border-radius: 25px;
     font-size: @font-size-medium;
 
-    &.login_phone {
+    &--phone {
       margin-bottom: 14px;
-      color: @color-theme-main;
-      background: #fff;
-
-      &.acitve {
-        background: @color-theme-main;
-        opacity: 0.3;
-      }
-
-      &.router-link-active {
-        background: #000;
+      color: @color-primary;
+      background-color: #fff;
+      &:active {
+        background-color: hsl(0, 0%, 90%);
       }
     }
 
-    &.experience_immediate {
+    &--exp {
       color: #fff;
       background: transparent;
+      &:active {
+        background-color: hsla(0, 0%, 100%, 0.3);
+      }
     }
   }
 
-  span {
-    font-size: @font-size-small-b;
-  }
-
-  .link {
-    font-size: @font-size-small-l;
-    text-decoration: none;
-  }
-
-  .treaty {
+  &__treaty {
     margin: 12px 0;
+    // font-size:
   }
 }
 </style>

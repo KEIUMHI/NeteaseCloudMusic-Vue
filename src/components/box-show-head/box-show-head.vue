@@ -54,9 +54,9 @@ export default {
 <style lang="less" scoped>
 @import "~@/assets/style/variables.less";
 .title {
-  font-size: @font-size-medium-b;
+  font-size: @font-size-medium-x;
   font-weight: 500;
-  color: @color-black;
+  color: @color-text-black;
 }
 
 .box-show-head {

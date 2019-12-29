@@ -57,7 +57,7 @@ export default {
 }
 
 .name {
-  font-size: @font-size-small-m;
-  color: @color-font-default;
+  font-size: @font-size-small-s;
+  color: #444;
 }
 </style>

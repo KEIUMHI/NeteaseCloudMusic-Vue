@@ -43,11 +43,11 @@ export default {
 @import "~@/assets/style/variables.less";
 
 .paly-count {
-  font-size: @font-size-small-m;
+  font-size: @font-size-small-s;
   color: #fff;
 }
 
 .iconfont {
-  font-size: @font-size-small-l;
+  font-size: @font-size-small;
 }
 </style>

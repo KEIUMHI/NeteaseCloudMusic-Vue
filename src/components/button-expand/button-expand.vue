@@ -45,8 +45,8 @@ export default {
   padding: 4px 8px;
   border: 1px solid #eee;
   border-radius: 15px;
-  font-size: @font-size-small-b;
-  color: @color-font-secondary;
+  font-size: @font-size-small-s;
+  color: #777;
 
   &.active {
     background: rgba(119, 119, 119, 0.1);

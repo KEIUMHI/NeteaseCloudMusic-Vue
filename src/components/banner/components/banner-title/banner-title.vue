@@ -27,12 +27,12 @@ export default {
   padding: 4px 5px;
   border-top-left-radius: 4px;
   border-bottom-right-radius: 5px;
-  font-size: @font-size-small-m;
+  font-size: @font-size-small-s;
   color: #fff;
   opacity: 0.88;
 
   &.red {
-    background: @color-theme-main;
+    background: @color-primary;
   }
 
   &.blue {

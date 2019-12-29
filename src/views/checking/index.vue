@@ -1,13 +1,14 @@
 <template>
   <div class="checking">
-    <div class="back">
-      <div class="btn-back"
-           @click="_handleBack">back</div>
-      <div class="tip_back">手机号登录</div>
-    </div>
-    <div class="mian-ctn">
+
+    <HeadBack label="手机号登录"
+              @click="_handleBack" />
+
+    <div class="checking__input">
+
       <div v-if="currentPage"
-           class="tip_phone">未注册手机号登录后将自动创建账号</div>
+           class="checking__tip">未注册手机号登录后将自动创建账号</div>
+
       <div class="input-wrapper">
         <div v-if="currentPage"
              class="input-phone-wrapper">
@@ -40,10 +41,14 @@
 
 <script>
 import { login } from '@/api/login'
-// import { setCookies } from '@/utils/auth'
+
+import HeadBack from './components/head-back'
 
 export default {
   name: 'checking',
+  components: {
+    HeadBack
+  },
   data() {
     return {
       phone: '',
@@ -80,13 +85,17 @@ export default {
         console.log(err)
       })
     }
-  },
+  }
 }
 </script>
 
 <style lang="less" scoped>
 @import "~@/assets/style/variables.less";
 .checking {
+  &__input {
+  }
+  &__tip {
+  }
 }
 
 .back {
@@ -99,8 +108,8 @@ export default {
 
   .tip_phone {
     margin: 30px 0;
-    font-size: @font-size-small-l;
-    color: @color-font-secondary;
+    font-size: @font-size-small;
+    color: #777;
   }
 
   .input {
@@ -118,7 +127,7 @@ export default {
     font-weight: 200;
     text-align: center;
     color: #fff;
-    background: @color-theme-main;
+    background: @color-primary;
   }
 }
 
@@ -136,7 +145,7 @@ export default {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    color: @color-font-secondary;
+    color: #777;
   }
 
   .countrycode {
@@ -145,7 +154,7 @@ export default {
 
   .clear {
     right: 3px;
-    font-size: @font-size-large-m;
+    font-size: 20px;
     font-weight: 300;
   }
 }
@@ -162,7 +171,7 @@ export default {
     top: 50%;
     right: 3px;
     transform: translateY(-50%);
-    font-size: @font-size-small-l;
+    font-size: @font-size-small;
   }
 }
 </style>
