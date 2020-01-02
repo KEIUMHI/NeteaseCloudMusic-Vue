@@ -58,7 +58,8 @@ export default {
       inputValue: null,
       phone: null,
       password: null,
-      status: 0
+      status: 0,
+      ing: false
     }
   },
   computed: {
@@ -69,7 +70,7 @@ export default {
       return `请输入${!this.status ? '手机号' : '密码'}`
     },
     buttonContent() {
-      return !this.status ? '下一步' : '登录'
+      return this.ing ? '登录中...' : (!this.status ? '下一步' : '登录')
     },
     clearVisible() {
       return !this.status && (this.inputValue || this.phone)
@@ -88,6 +89,7 @@ export default {
       }
     },
     _handleNext() {
+      if (this.ing) return
       const status = {
         0: () => {
           this.phone = this.inputValue
@@ -98,7 +100,14 @@ export default {
         },
         1: () => {
           this.password = this.inputValue
-          this._login()
+          if (!this.password) {
+            alert('您还未填写密码')
+            return
+          }
+          this.ing = true
+          this._login().then(() => {
+            this.ing = false
+          })
         }
       }
       status[this.status]()
@@ -126,14 +135,14 @@ export default {
         phone: this.phone,
         password: this.password
       }
-      login(account).then(res => {
+      return login(account).then(res => {
         console.log('login success:', res)
         const code = res.data.code
         console.log(code)
         if (code >= 500) {
           alert(res.data.msg)
         } else if (code >= 200 && code < 300) {
-          this.$router.push('/index')
+          this.$router.push({ name: 'index' })
         } else if (code >= 400 && code < 500) {
           alert('错误')
         }
