@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import {
   loginStatus
-} from '@/api/login'
+} from 'api/login'
 
 import loginRouter from './login/index'
 import checkingRouter from './checking/index'

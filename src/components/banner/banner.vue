@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import { getBanner } from '@/api/find'
+import { getBanner } from 'api/find'
 import Swiper from 'swiper'
 import 'swiper/dist/css/swiper.min.css'
 import 'swiper/dist/js/swiper'

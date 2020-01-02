@@ -42,10 +42,10 @@ import {
   getRecommendMusic,
   getNewAlbum,
   getRecommendNewSong
-} from '@/api/find'
+} from 'api/find'
 // COMPONENTS
-import BoxShow from '@/components/box-show/box-show'
-import BoxShowHead from '@/components/box-show-head/box-show-head'
+import BoxShow from 'components/box-show/box-show'
+import BoxShowHead from 'components/box-show-head/box-show-head'
 
 export default {
   name: 'recommend',

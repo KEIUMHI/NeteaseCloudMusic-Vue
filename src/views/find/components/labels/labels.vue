@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import TabFeatureItem from '@/components/tab-feature-item/tab-feature-item'
+import TabFeatureItem from 'components/tab-feature-item/tab-feature-item'
 
 export default {
   name: 'labels',

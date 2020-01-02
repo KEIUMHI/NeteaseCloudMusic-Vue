@@ -4,7 +4,7 @@
     <img
       class="login__logo"
       alt="logo"
-      :src="require('@/assets/NeteaseCloudMusicIcon.png')"
+      :src="require('assets/NeteaseCloudMusicIcon.png')"
     />
 
     <div class="login__main">

@@ -44,7 +44,7 @@
 <script>
 import {
   login
-} from '@/api/login'
+} from 'api/login'
 
 import HeadBack from './components/head-back'
 
