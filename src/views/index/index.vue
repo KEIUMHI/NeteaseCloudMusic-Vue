@@ -34,13 +34,12 @@
 import Swiper from 'swiper'
 import 'swiper/dist/css/swiper.min.css'
 import 'swiper/dist/js/swiper'
-// COMPONENTS
+
 import TabHead from '@/components/tab-head/tab-head'
 import Mine from '@/views/mine/index'
 import Find from '@/views/find/index'
 import Cloud from '@/views/cloud/index'
 import Videos from '@/views/videos/index'
-
 
 export default {
   name: 'app',

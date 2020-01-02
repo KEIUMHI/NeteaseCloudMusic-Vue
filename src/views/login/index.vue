@@ -8,24 +8,28 @@
     />
 
     <div class="login__main">
-      <router-link
-        class="login__btn login__btn--phone"
-        tag="div"
-        :to="{ name: 'checking' }"
-      >手机号登录</router-link>
-      <router-link
-        class="login__btn login__btn--exp"
-        tag="div"
-        :to="{ name: 'index' }"
-      >立即体验</router-link>
+      <div
+        class="login__btn login__btn-phone"
+        @click="jump('checking')"
+      >手机号登录</div>
+      <div
+        class="login__btn login__btn-exp"
+        @click="jump('index')"
+      >立即体验</div>
 
-      <div class="login__treaty d-flex j-a-center">
-        <input type="checkbox"><span>同意</span><a
-          class="link"
-          href=""
+      <div
+        ref="loginTreaty"
+        class="login__treaty"
+      >
+        <input
+          class="login__treaty-checkbox"
+          type="checkbox"
+        ><span>同意</span><a
+          class="login__treaty-link"
+          href="#"
         >《用户协议》</a><span>和</span><a
-          class="link"
-          href=""
+          class="login__treaty-link"
+          href="#"
         >《隐私政策》</a>
       </div>
     </div>
@@ -41,7 +45,18 @@ export default {
       experienceActive: false
     }
   },
-  methods: {}
+  methods: {
+    jump(name) {
+      const el = this.$refs.loginTreaty
+      const checkbox = el.getElementsByClassName('login__treaty-checkbox')
+      const checked = checkbox[0].checked
+      if (!checked) {
+        alert('请先勾选同意《用户协议》和《隐私政策》')
+        return
+      }
+      this.$router.push({ name })
+    }
+  }
 }
 </script>
 
@@ -49,6 +64,9 @@ export default {
 @import "~@/assets/style/variables.less";
 
 .login {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-end;
   height: 100vh;
   text-align: center;
   background: @color-primary;
@@ -64,8 +82,9 @@ export default {
   }
 
   &__main {
-    position: absolute;
-    bottom: 0;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
     width: 100vw;
   }
 
@@ -77,7 +96,7 @@ export default {
     border-radius: 25px;
     font-size: @font-size-medium;
 
-    &--phone {
+    &-phone {
       margin-bottom: 14px;
       color: @color-primary;
       background-color: #fff;
@@ -86,7 +105,7 @@ export default {
       }
     }
 
-    &--exp {
+    &-exp {
       color: #fff;
       background: transparent;
       &:active {
@@ -96,8 +115,19 @@ export default {
   }
 
   &__treaty {
-    margin: 12px 0;
-    // font-size:
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: @font-size-small;
+    color: @color-text-gray-seat;
+
+    &-checkbox {
+      margin-right: 5px;
+    }
+
+    &-link {
+      color: #fff;
+    }
   }
 }
 </style>
