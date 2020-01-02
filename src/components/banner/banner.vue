@@ -2,17 +2,23 @@
   <div class="banner">
     <div class="swiper-container banner">
       <div class="swiper-wrapper">
-        <div v-for="(banner, index) in banners"
-             :key="index"
-             class="swiper-slide">
+        <div
+          v-for="(banner, index) in banners"
+          :key="index"
+          class="swiper-slide"
+        >
           <div class="image-wrapper">
-            <img class="banner-image"
-                 alt="banner_image"
-                 :src="banner.imageUrl" />
-            <BannerTitle v-if="banner.typeTitle"
-                         class="banner-title"
-                         :title="banner.typeTitle"
-                         :type-color="banner.titleColor" />
+            <img
+              class="banner-image"
+              alt="banner_image"
+              :src="banner.imageUrl"
+            />
+            <BannerTitle
+              v-if="banner.typeTitle"
+              class="banner-title"
+              :title="banner.typeTitle"
+              :type-color="banner.titleColor"
+            />
           </div>
         </div>
       </div>

@@ -2,28 +2,36 @@
   <div class="wrap">
     <div class="recommend">
 
-      <BoxShowHead title="推荐歌单"
-                   more="歌单广场" />
+      <BoxShowHead
+        title="推荐歌单"
+        more="歌单广场"
+      />
       <div class="recommend-music-container">
-        <BoxShow v-for="recommendMusic in recommendMusicList"
-                 :id="recommendMusic.id"
-                 :key="recommendMusic.id"
-                 :name="recommendMusic.name"
-                 :pic-url="recommendMusic.picUrl"
-                 :play-count="recommendMusic.playCount" />
+        <BoxShow
+          v-for="recommendMusic in recommendMusicList"
+          :id="recommendMusic.id"
+          :key="recommendMusic.id"
+          :name="recommendMusic.name"
+          :pic-url="recommendMusic.picUrl"
+          :play-count="recommendMusic.playCount"
+        />
       </div>
 
-      <BoxShowHead :button-switch="true"
-                   switch-name-main="新碟"
-                   switch-name-sed="新歌"
-                   :more="currentSwitch === 0 ? '更多新碟' : '新歌推荐'"
-                   @change="_handleSwitchChange" />
+      <BoxShowHead
+        :button-switch="true"
+        switch-name-main="新碟"
+        switch-name-sed="新歌"
+        :more="currentSwitch === 0 ? '更多新碟' : '新歌推荐'"
+        @change="_handleSwitchChange"
+      />
       <div class="music-new-switch-container">
-        <BoxShow v-for="(newMusic, index) in newMusicList"
-                 :id="newMusic.id"
-                 :key="index"
-                 :name="newMusic.name"
-                 :pic-url="currentSwitch === 0 ? newMusic.picUrl : newMusic.song.album.picUrl" />
+        <BoxShow
+          v-for="(newMusic, index) in newMusicList"
+          :id="newMusic.id"
+          :key="index"
+          :name="newMusic.name"
+          :pic-url="currentSwitch === 0 ? newMusic.picUrl : newMusic.song.album.picUrl"
+        />
       </div>
     </div>
   </div>

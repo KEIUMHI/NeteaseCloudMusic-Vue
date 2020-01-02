@@ -3,13 +3,17 @@
     <div class="tab-head">
       <div @click="_handleMenu"><i class="iconfont iconMenu"></i></div>
       <div class="options">
-        <div id="nav"
-             class="swiper-container swiper-no-swiping">
+        <div
+          id="nav"
+          class="swiper-container swiper-no-swiping"
+        >
           <div class="swiper-wrapper">
-            <div v-for="(tab, index) in tabs"
-                 :key="index"
-                 class="swiper-slide"
-                 @click="_handleClick(index)">
+            <div
+              v-for="(tab, index) in tabs"
+              :key="index"
+              class="swiper-slide"
+              @click="_handleClick(index)"
+            >
               <span :style="tab === '发现' ? {
                   fontSize: '16px',
                   fontWeight: 'bold',

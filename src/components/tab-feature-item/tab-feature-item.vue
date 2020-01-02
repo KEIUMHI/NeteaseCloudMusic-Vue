@@ -1,20 +1,28 @@
 <template>
-  <div class="tab-feature-item"
-       @click="_handleClick">
-    <div class="icon"
-         :style="{
+  <div
+    class="tab-feature-item"
+    @click="_handleClick"
+  >
+    <div
+      class="icon"
+      :style="{
         width: styles.width,
         height: styles.height,
         background: styles.background
-      }">
-      <i :class="['iconfont', iconName]"
-         :style="{ fontSize: styles.iconFontSize }"></i>
+      }"
+    >
+      <i
+        :class="['iconfont', iconName]"
+        :style="{ fontSize: styles.iconFontSize }"
+      ></i>
     </div>
-    <div class="label"
-         :style="{
+    <div
+      class="label"
+      :style="{
         fontSize: styles.fontSize,
         color: styles.color
-      }">{{ label }}</div>
+      }"
+    >{{ label }}</div>
   </div>
 </template>
 

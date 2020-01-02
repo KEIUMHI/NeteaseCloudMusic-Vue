@@ -1,7 +1,9 @@
 <template>
   <div class="box-show">
-    <SongCover :pic-url="picUrl"
-               :play-count="playCount" />
+    <SongCover
+      :pic-url="picUrl"
+      :play-count="playCount"
+    />
     <p class="name">{{ name }}</p>
   </div>
 </template>

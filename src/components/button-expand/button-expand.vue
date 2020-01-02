@@ -1,9 +1,13 @@
 <template>
-  <div :class="['button-expand', 'd-flex', 'j-a-center', {active: isActive}]"
-       @mouseover="_handleMouseDown"
-       @mouseout="_handleMouseUp">
-    <i v-if="iconName"
-       :class="['iconfont', iconName]"></i>
+  <div
+    :class="['button-expand', 'd-flex', 'j-a-center', {active: isActive}]"
+    @mouseover="_handleMouseDown"
+    @mouseout="_handleMouseUp"
+  >
+    <i
+      v-if="iconName"
+      :class="['iconfont', iconName]"
+    ></i>
     {{ content }}
   </div>
 </template>

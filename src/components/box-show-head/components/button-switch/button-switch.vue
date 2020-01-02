@@ -1,10 +1,14 @@
 <template>
   <div class="button-switch d-flex">
-    <div :class="['name', 'name_main', {current: isCurrent === 0}]"
-         @click="_handleClick">{{ nameMain }}</div>
+    <div
+      :class="['name', 'name_main', {current: isCurrent === 0}]"
+      @click="_handleClick"
+    >{{ nameMain }}</div>
     <div class="dividing-line"></div>
-    <div :class="['name', 'name_secondary', {current: isCurrent === 1}]"
-         @click="_handleClick">{{ nameSecondary }}</div>
+    <div
+      :class="['name', 'name_secondary', {current: isCurrent === 1}]"
+      @click="_handleClick"
+    >{{ nameSecondary }}</div>
   </div>
 </template>
 

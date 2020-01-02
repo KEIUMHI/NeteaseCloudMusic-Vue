@@ -1,10 +1,12 @@
 <template>
   <div class="mine-items">
-    <MineItem v-for="mineItem in mineItems"
-              :id="mineItem.id"
-              :key="mineItem.id"
-              :name="mineItem.nm"
-              :icon="mineItem.icon" />
+    <MineItem
+      v-for="mineItem in mineItems"
+      :id="mineItem.id"
+      :key="mineItem.id"
+      :name="mineItem.nm"
+      :icon="mineItem.icon"
+    />
   </div>
 </template>
 

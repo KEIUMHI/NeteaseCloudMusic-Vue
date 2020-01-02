@@ -1,13 +1,15 @@
 <template>
   <div class="labels">
     <div class="label-options">
-      <TabFeatureItem v-for="tab in tabFeatureItems"
-                      :id="tab.id"
-                      :key="tab.id"
-                      :styles="sameStyle"
-                      :label="tab.label"
-                      :icon-name="tab.iconName"
-                      @tab-click="_tabClick" />
+      <TabFeatureItem
+        v-for="tab in tabFeatureItems"
+        :id="tab.id"
+        :key="tab.id"
+        :styles="sameStyle"
+        :label="tab.label"
+        :icon-name="tab.iconName"
+        @tab-click="_tabClick"
+      />
     </div>
   </div>
 </template>

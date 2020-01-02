@@ -1,12 +1,16 @@
 <template>
   <div class="app-main">
 
-    <TabHead class="tab-header"
-             @change="_tabsChange" />
+    <TabHead
+      class="tab-header"
+      @change="_tabsChange"
+    />
 
-    <div id="page"
-         class="swiper-container"
-         style="touch-aciton: none;">
+    <div
+      id="page"
+      class="swiper-container"
+      style="touch-aciton: none;"
+    >
       <div class="swiper-wrapper">
         <div class="swiper-slide slidepage">
           <Mine />

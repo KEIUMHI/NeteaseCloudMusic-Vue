@@ -1,6 +1,8 @@
 <template>
-  <div class="play-count d-flex j-a-center"
-       :style="styles">
+  <div
+    class="play-count d-flex j-a-center"
+    :style="styles"
+  >
     <i class="iconfont iconplay"></i>{{ count | formatCount }}
   </div>
 </template>

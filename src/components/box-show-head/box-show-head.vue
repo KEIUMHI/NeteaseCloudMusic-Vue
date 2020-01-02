@@ -1,13 +1,19 @@
 <template>
   <div class="box-show-head d-flex">
-    <div v-if="!buttonSwitch"
-         class="title">{{ title }}</div>
-    <ButtonSwitch v-else
-                  :name-main="switchNameMain"
-                  :name-secondary="switchNameSed"
-                  @change="_change" />
-    <ButtonExpand v-if="more"
-                  :content="more" />
+    <div
+      v-if="!buttonSwitch"
+      class="title"
+    >{{ title }}</div>
+    <ButtonSwitch
+      v-else
+      :name-main="switchNameMain"
+      :name-secondary="switchNameSed"
+      @change="_change"
+    />
+    <ButtonExpand
+      v-if="more"
+      :content="more"
+    />
   </div>
 </template>
 

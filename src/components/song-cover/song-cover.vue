@@ -1,11 +1,15 @@
 <template>
   <div class="song-cover d-flex">
-    <img class="img"
-         alt="recommend-music_img"
-         :src="picUrl" />
-    <PlayCount v-if="playCount"
-               class="paly-count_position"
-               :count="playCount" />
+    <img
+      class="img"
+      alt="recommend-music_img"
+      :src="picUrl"
+    />
+    <PlayCount
+      v-if="playCount"
+      class="paly-count_position"
+      :count="playCount"
+    />
   </div>
 </template>
 

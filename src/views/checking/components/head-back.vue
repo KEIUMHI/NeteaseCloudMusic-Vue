@@ -1,7 +1,9 @@
 <template>
   <div class="head-back">
-    <div class="head-back__icon"
-         @click="_handleClick"></div>
+    <div
+      class="head-back__icon"
+      @click="_handleClick"
+    ></div>
     <span class="head-back__label">{{ label }}</span>
   </div>
 </template>

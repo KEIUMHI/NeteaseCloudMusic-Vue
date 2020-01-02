@@ -1,22 +1,32 @@
 <template>
   <div class="login">
 
-    <img class="login__logo"
-         alt="logo"
-         :src="require('@/assets/NeteaseCloudMusicIcon.png')" />
+    <img
+      class="login__logo"
+      alt="logo"
+      :src="require('@/assets/NeteaseCloudMusicIcon.png')"
+    />
 
     <div class="login__main">
-      <router-link class="login__btn login__btn--phone"
-                   tag="div"
-                   :to="{ name: 'checking' }">手机号登录</router-link>
-      <router-link class="login__btn login__btn--exp"
-                   tag="div"
-                   :to="{ name: 'index' }">立即体验</router-link>
+      <router-link
+        class="login__btn login__btn--phone"
+        tag="div"
+        :to="{ name: 'checking' }"
+      >手机号登录</router-link>
+      <router-link
+        class="login__btn login__btn--exp"
+        tag="div"
+        :to="{ name: 'index' }"
+      >立即体验</router-link>
 
       <div class="login__treaty d-flex j-a-center">
-        <input type="checkbox"><span>同意</span><a class="link"
-           href="">《用户协议》</a><span>和</span><a class="link"
-           href="">《隐私政策》</a>
+        <input type="checkbox"><span>同意</span><a
+          class="link"
+          href=""
+        >《用户协议》</a><span>和</span><a
+          class="link"
+          href=""
+        >《隐私政策》</a>
       </div>
     </div>
   </div>
