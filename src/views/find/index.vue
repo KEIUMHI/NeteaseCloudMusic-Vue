@@ -14,10 +14,10 @@
 
 <script>
 import { getVideoLabels, getVideos } from 'api/find'
-// COMPONENTS
-import Banner from 'components/banner/banner'
-import Labels from './components/labels/labels'
-import Recommend from './components/recommend/recommend'
+
+import Banner from 'components/banner'
+import Labels from './components/labels'
+import Recommend from './components/recommend'
 
 export default {
   name: 'find',

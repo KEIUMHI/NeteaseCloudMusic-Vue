@@ -1,6 +1,6 @@
 <template>
   <div
-    class="tab-feature-item"
+    class="category-button"
     @click="_handleClick"
   >
     <div
@@ -28,7 +28,7 @@
 
 <script>
 export default {
-  name: 'tab-feature-item',
+  name: 'category-button',
   props: {
     styles: {
       type: Object,
@@ -67,7 +67,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.tab-feature-item {
+.category-button {
   display: inline-block;
   text-align: center;
 }

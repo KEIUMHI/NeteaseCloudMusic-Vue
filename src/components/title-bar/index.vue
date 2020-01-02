@@ -1,16 +1,16 @@
 <template>
-  <div class="box-show-head d-flex">
+  <div class="title-bar d-flex">
     <div
       v-if="!buttonSwitch"
       class="title"
     >{{ title }}</div>
-    <ButtonSwitch
+    <TitleBarButton
       v-else
       :name-main="switchNameMain"
       :name-secondary="switchNameSed"
       @change="_change"
     />
-    <ButtonExpand
+    <ShowMore
       v-if="more"
       :content="more"
     />
@@ -18,14 +18,14 @@
 </template>
 
 <script>
-import ButtonExpand from '../button-expand/button-expand'
-import ButtonSwitch from './components/button-switch/button-switch'
+import ShowMore from '../show-more'
+import TitleBarButton from './title-bar-button'
 
 export default {
-  name: 'box-show-head',
+  name: 'title-bar',
   components: {
-    ButtonExpand,
-    ButtonSwitch
+    ShowMore,
+    TitleBarButton
   },
   props: {
     title: {
@@ -65,7 +65,7 @@ export default {
   color: @color-text-black;
 }
 
-.box-show-head {
+.title-bar {
   margin: 12px 0;
   justify-content: space-between;
   align-items: center;

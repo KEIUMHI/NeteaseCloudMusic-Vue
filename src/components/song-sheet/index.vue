@@ -1,5 +1,5 @@
 <template>
-  <div class="box-show">
+  <div class="song-sheet">
     <SongCover
       :pic-url="picUrl"
       :play-count="playCount"
@@ -10,10 +10,10 @@
 
 <script>
 // COMPONENTS
-import SongCover from '../song-cover/song-cover'
+import SongCover from '../song-cover'
 
 export default {
-  name: 'box-show',
+  name: 'song-sheet',
   components: {
     SongCover
   },
@@ -34,7 +34,7 @@ export default {
       type: String,
       default: null
     },
-    playCount: {
+    count: {
       type: [String, Number],
       default: null
     },
@@ -53,7 +53,7 @@ export default {
 
 <style lang="less" scoped>
 @import "~common/less/variables.less";
-.box-show {
+.song-sheet {
   // 28是两边padding之和、20是剩余的留白宽度之和
   width: calc((100vw - 28px - 20px) / 3);
 }

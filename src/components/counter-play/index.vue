@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'play-count',
+  name: 'counter-play',
   filters: {
     formatCount(count) {
       if (count > 100000000) { // 大于一亿

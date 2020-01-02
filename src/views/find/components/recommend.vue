@@ -2,22 +2,22 @@
   <div class="wrap">
     <div class="recommend">
 
-      <BoxShowHead
+      <TitleBar
         title="推荐歌单"
         more="歌单广场"
       />
       <div class="recommend-music-container">
-        <BoxShow
-          v-for="recommendMusic in recommendMusicList"
+        <SongSheet
+          v-for="recommendMusic in recommendList"
           :id="recommendMusic.id"
           :key="recommendMusic.id"
           :name="recommendMusic.name"
           :pic-url="recommendMusic.picUrl"
-          :play-count="recommendMusic.playCount"
+          :count="recommendMusic.playCount"
         />
       </div>
 
-      <BoxShowHead
+      <TitleBar
         :button-switch="true"
         switch-name-main="新碟"
         switch-name-sed="新歌"
@@ -25,7 +25,7 @@
         @change="_handleSwitchChange"
       />
       <div class="music-new-switch-container">
-        <BoxShow
+        <SongSheet
           v-for="(newMusic, index) in newMusicList"
           :id="newMusic.id"
           :key="index"
@@ -43,19 +43,19 @@ import {
   getNewAlbum,
   getRecommendNewSong
 } from 'api/find'
-// COMPONENTS
-import BoxShow from 'components/box-show/box-show'
-import BoxShowHead from 'components/box-show-head/box-show-head'
+
+import SongSheet from 'components/song-sheet'
+import TitleBar from 'components/title-bar'
 
 export default {
   name: 'recommend',
   components: {
-    BoxShow,
-    BoxShowHead
+    SongSheet,
+    TitleBar
   },
   data() {
     return {
-      recommendMusicList: [],
+      recommendList: [],
       newMusicList: [],
       currentSwitch: 0
     }
@@ -72,7 +72,7 @@ export default {
       }).then(res => {
         console.log('recommendMusic:', res)
         if (res.statusText === 'OK') {
-          this.recommendMusicList = res.data.result
+          this.recommendList = res.data.result
         }
       }).catch(err => {
         console.log(err)

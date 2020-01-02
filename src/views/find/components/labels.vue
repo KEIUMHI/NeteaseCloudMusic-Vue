@@ -1,7 +1,7 @@
 <template>
   <div class="labels">
     <div class="label-options">
-      <TabFeatureItem
+      <CategoryButton
         v-for="tab in tabFeatureItems"
         :id="tab.id"
         :key="tab.id"
@@ -15,12 +15,12 @@
 </template>
 
 <script>
-import TabFeatureItem from 'components/tab-feature-item/tab-feature-item'
+import CategoryButton from 'components/category-button'
 
 export default {
   name: 'labels',
   components: {
-    TabFeatureItem
+    CategoryButton
   },
   data() {
     return {

@@ -5,7 +5,7 @@
       alt="recommend-music_img"
       :src="picUrl"
     />
-    <PlayCount
+    <CounterPlay
       v-if="playCount"
       class="paly-count_position"
       :count="playCount"
@@ -14,12 +14,12 @@
 </template>
 
 <script>
-import PlayCount from '../play-count/play-count'
+import CounterPlay from '../counter-play'
 
 export default {
   name: 'song-cover',
   components: {
-    PlayCount
+    CounterPlay
   },
   props: {
     picUrl: {

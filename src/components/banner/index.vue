@@ -13,7 +13,7 @@
               alt="banner_image"
               :src="banner.imageUrl"
             />
-            <BannerTitle
+            <BannerLabel
               v-if="banner.typeTitle"
               class="banner-title"
               :title="banner.typeTitle"
@@ -29,16 +29,17 @@
 
 <script>
 import { getBanner } from 'api/find'
+
 import Swiper from 'swiper'
 import 'swiper/dist/css/swiper.min.css'
 import 'swiper/dist/js/swiper'
-// COMPONENTS
-import BannerTitle from './components/banner-title/banner-title'
+
+import BannerLabel from './banner-label'
 
 export default {
   name: 'banner',
   components: {
-    BannerTitle
+    BannerLabel
   },
   data() {
     return {

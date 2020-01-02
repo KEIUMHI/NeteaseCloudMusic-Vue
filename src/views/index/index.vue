@@ -35,7 +35,8 @@ import Swiper from 'swiper'
 import 'swiper/dist/css/swiper.min.css'
 import 'swiper/dist/js/swiper'
 
-import TabHead from 'components/tab-head/tab-head'
+import TabHead from 'components/tab-head'
+
 import Mine from '@/views/mine/index'
 import Find from '@/views/find/index'
 import Cloud from '@/views/cloud/index'

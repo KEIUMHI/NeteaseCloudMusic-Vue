@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="['button-expand', 'd-flex', 'j-a-center', {active: isActive}]"
+    :class="['show-more', 'd-flex', 'j-a-center', {active: isActive}]"
     @mouseover="_handleMouseDown"
     @mouseout="_handleMouseUp"
   >
@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: 'button-expand',
+  name: 'show-more',
   props: {
     content: {
       type: String,
@@ -45,7 +45,7 @@ export default {
 
 <style lang="less" scoped>
 @import "~common/less/variables.less";
-.button-expand {
+.show-more {
   padding: 4px 8px;
   border: 1px solid #eee;
   border-radius: 15px;

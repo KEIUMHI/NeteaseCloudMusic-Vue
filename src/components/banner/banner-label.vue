@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'banner-title',
+  name: 'banner-label',
   props: {
     title: {
       type: String,
