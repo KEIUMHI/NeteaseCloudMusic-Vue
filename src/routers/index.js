@@ -28,7 +28,7 @@ const router = new Router({
  * 没有登陆则跳转到登陆页
  */
 router.beforeEach((to, from, next) => {
-  if (to.name !== 'login' || to.name !== 'checking') {
+  if (to.name !== 'login' && to.name !== 'checking') {
     loginStatus().then(res => {
       console.log(res)
       next()
