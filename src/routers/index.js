@@ -13,7 +13,10 @@ Vue.use(Router)
 const router = new Router({
   mode: 'history',
   path: process.env.BASE_URL,
-  routes: [
+  routes: [{
+      path: '/',
+      redirect: '/index'
+    },
     loginRouter,
     checkingRouter,
     indexRouter
@@ -25,20 +28,16 @@ const router = new Router({
  * 没有登陆则跳转到登陆页
  */
 router.beforeEach((to, from, next) => {
-  if (to.name !== 'login') {
-    if (from.name === 'login' && to.name === 'checking') {
+  if (to.name !== 'login' || to.name !== 'checking') {
+    loginStatus().then(res => {
+      console.log(res)
       next()
-    } else {
-      loginStatus().then(res => {
-        console.log(res)
-        next()
-      }).catch(err => {
-        console.error('loginStatusError:', err.response)
-        next({
-          name: 'login'
-        })
+    }).catch(err => {
+      console.error('loginStatusError:', err.response)
+      next({
+        name: 'login'
       })
-    }
+    })
   } else {
     next()
   }

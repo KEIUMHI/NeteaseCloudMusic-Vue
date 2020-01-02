@@ -48,6 +48,7 @@ module.exports = {
     },
     plugins: ['vue'],
     globals: {
+        "process": true,
         "window": true,
         "document": true,
         "console": true,
