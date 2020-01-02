@@ -177,7 +177,7 @@ export default {
 </script>
 
 <style lang="less">
-@import "~@/assets/style/variables.less";
+@import "~common/less/variables.less";
 
 .tab-header {
   margin: 10px 0 20px 0;

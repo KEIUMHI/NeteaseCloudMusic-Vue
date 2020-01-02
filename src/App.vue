@@ -10,8 +10,7 @@
 </script>
 
 <style lang="less">
-@import "~@/assets/style/reset.less";
-@import "~@/assets/style/variables.less";
+@import "~common/less/index.less";
 
 #app {
   margin: 0;

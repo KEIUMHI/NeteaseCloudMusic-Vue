@@ -44,7 +44,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import "~@/assets/style/variables.less";
+@import "~common/less/variables.less";
 .button-expand {
   padding: 4px 8px;
   border: 1px solid #eee;

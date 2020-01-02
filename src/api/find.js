@@ -1,53 +1,79 @@
 import request from '@/utils/request'
-// 获取轮播
-export function getBanner (params) {
+
+/**
+ * 轮播图
+ * @param {number} type 0:pc,1:android,2:iphone,3:ipad 
+ */
+export function getBanner(params) {
   return request({
     url: 'banner',
     method: 'get',
     params
   })
 }
-// 获取推荐音乐
-export function getRecommendMusic (params) {
+
+/**
+ * 相关歌单推荐
+ * @param {number} id 歌单id
+ */
+export function getRecommendMusic(params) {
   return request({
     url: 'personalized',
     method: 'get',
     params
   })
 }
-// 获取推荐新音乐
-export function getRecommendNewSong (params) {
+
+/**
+ * 推荐新音乐
+ */
+export function getRecommendNewSong(params) {
   return request({
     url: 'personalized/newsong',
     method: 'get',
     params
   })
 }
-// 新碟推送
-export function getNewAlbum (params) {
+
+/**
+ * 新碟推送
+ * @param {number} limit 取出数量默认50 *
+ */
+export function getNewAlbum(params) {
   return request({
     url: 'top/album',
     method: 'get',
     params
   })
 }
-// 新歌速递 type 0全部 7华语 96欧美 8日本 16韩国
-export function getNewSong (params) {
+
+/**
+ * 新歌速递
+ * @param {number} type 0:全部,1:华语,7:欧美,96:日本:8,16:韩国
+ */
+export function getNewSong(params) {
   return request({
     url: 'top/song',
     method: 'get',
     params
   })
 }
-// 视频标签
-export function getVideoLabels () {
+
+/**
+ * 视频标签列表
+ */
+export function getVideoLabels() {
   return request({
     url: 'video/group/list',
     method: 'get'
   })
 }
-// 视频标签下的视频
-export function getVideos (params) {
+
+/**
+ * 视频标签下的视频
+ * @param {number} id 视频标签下的id
+ */
+export function getVideos(params) {
   return request({
     url: 'video/group',
     method: 'get',

@@ -58,7 +58,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import "~@/assets/style/variables.less";
+@import "~common/less/variables.less";
 .title {
   font-size: @font-size-medium-x;
   font-weight: 500;

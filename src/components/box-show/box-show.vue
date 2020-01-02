@@ -52,7 +52,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import "~@/assets/style/variables.less";
+@import "~common/less/variables.less";
 .box-show {
   // 28是两边padding之和、20是剩余的留白宽度之和
   width: calc((100vw - 28px - 20px) / 3);

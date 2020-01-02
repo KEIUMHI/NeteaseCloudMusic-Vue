@@ -61,7 +61,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import "~@/assets/style/variables.less";
+@import "~common/less/variables.less";
 
 .login {
   display: flex;

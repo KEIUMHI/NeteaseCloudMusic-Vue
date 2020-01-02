@@ -1,15 +1,23 @@
 import request from '@/utils/request'
 
-// 登陆
-export function login (query) {
+/**
+ * 手机登录
+ * @param {number} phone 手机号
+ * @param {string} password 密码
+ * @param {number} countrycode 国家码 *
+ */
+export function login(params) {
   return request({
     url: 'login/cellphone',
     method: 'post',
-    params: query
+    params
   })
 }
-// 登陆状态 判断是否已登陆
-export function loginStatus () {
+
+/**
+ * 登录状态
+ */
+export function loginStatus() {
   return request({
     url: 'login/status',
     method: 'get'

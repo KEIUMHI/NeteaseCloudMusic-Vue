@@ -42,7 +42,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import "~@/assets/style/variables.less";
+@import "~common/less/variables.less";
 
 .paly-count {
   font-size: @font-size-small-s;
