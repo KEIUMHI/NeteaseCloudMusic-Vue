@@ -50,7 +50,8 @@ module.exports = {
     globals: {
         "window": true,
         "document": true,
-        "console": true
+        "console": true,
+        "alert": true
     },
     rules: {
         /**

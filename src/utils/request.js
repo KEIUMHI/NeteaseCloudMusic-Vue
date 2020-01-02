@@ -7,10 +7,8 @@ const service = axios.create({
 
 service.interceptors.request.use(config => {
   // 在请求发送之前做点什么
-    config.withCredentials = true
+  config.withCredentials = true
   return config
-}), err => {
-  console.log(err)
-}
+})
 
 export default service

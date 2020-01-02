@@ -1,46 +1,50 @@
 <template>
   <div class="checking">
 
-    <HeadBack label="手机号登录"
-              @click="_handleBack" />
+    <HeadBack
+      label="手机号登录"
+      @click="_handleBack"
+    />
 
-    <div class="checking__input">
+    <div class="checking__main">
+      <div
+        v-if="!status"
+        class="checking__tip"
+      >未注册手机号登录后将自动创建账号</div>
 
-      <div v-if="currentPage"
-           class="checking__tip">未注册手机号登录后将自动创建账号</div>
-
-      <div class="input-wrapper">
-        <div v-if="currentPage"
-             class="input-phone-wrapper">
-          <div class="countrycode"
-               :style="phone ? '' : { color: '#999'}">+86</div>
-          <input v-model="phone"
-                 type="text"
-                 class="input"
-                 placeholder="请输入手机号" />
-          <div v-if="phone"
-               class="clear"
-               @click="phone = ''">x</div>
-        </div>
-
-        <div v-else
-             class="input-pw-wrapper">
-          <input v-model="password"
-                 type="password"
-                 class="input"
-                 placeholder="请输入密码" />
-          <a class="link link-forget-pw"
-             href="">忘记密码？</a>
-        </div>
+      <div class="checking__input">
+        <div :class="['checking__input-pre', {'-active': inputValue || phone}]">+86</div>
+        <input
+          v-model="inputValue"
+          class="checking__input-inner"
+          autofocus
+          :type="inputAttrType"
+          :placeholder="inputAttrPlaceholder"
+        >
+        <div
+          v-if="clearVisible"
+          class="checking__input-clear"
+          @click="_handleClear"
+        ></div>
+        <a
+          v-if="status"
+          class="checking__input-link"
+          href="#"
+        >忘记密码</a>
       </div>
-      <div class="btn-next"
-           @click="_handleClick">{{ currentPage ? '下一步' : '登录' }}</div>
+
+      <div
+        class="checking__button-next"
+        @click="_handleNext"
+      >{{ buttonContent }}</div>
     </div>
   </div>
 </template>
 
 <script>
-import { login } from '@/api/login'
+import {
+  login
+} from '@/api/login'
 
 import HeadBack from './components/head-back'
 
@@ -51,26 +55,70 @@ export default {
   },
   data() {
     return {
-      phone: '',
+      inputValue: null,
+      phone: null,
       password: null,
-      currentPage: 1 // 1 === phone； 0 === password
+      status: 0
+    }
+  },
+  computed: {
+    inputAttrType() {
+      return !this.status ? 'type' : 'password'
+    },
+    inputAttrPlaceholder() {
+      return `请输入${!this.status ? '手机号' : '密码'}`
+    },
+    buttonContent() {
+      return !this.status ? '下一步' : '登录'
+    },
+    clearVisible() {
+      return !this.status && (this.inputValue || this.phone)
     }
   },
   methods: {
     _handleBack() {
-      if (this.currentPage) {
-        this.$router.go(-1)
+      if (this.status) {
+        this.status = 0
+        this.inputValue = this.phone
+        this.password = null
       } else {
-        this.currentPage = 1
+        this.$router.go(-1)
+        this.inputValue = null
+        this.phone = null
       }
     },
-    _handleClick() {
-      if (this.currentPage && this.phone) {
-        this.currentPage = 0
-      } else if (!this.currentPage) {
-        this._login()
+    _handleNext() {
+      const status = {
+        0: () => {
+          this.phone = this.inputValue
+          if (this._checkPhoneNum(this.phone)) {
+            this.status = 1
+            this.inputValue = null
+          }
+        },
+        1: () => {
+          this.password = this.inputValue
+          this._login()
+        }
       }
-      console.log(this.phone, this.password)
+      status[this.status]()
+    },
+    _checkPhoneNum(num) {
+      if (!num) {
+        alert('您还未输入手机号')
+        return false
+      }
+
+      if (!(/^1[3456789]\d{9}$/.test(num))) {
+        alert('手机号码格式有误')
+        return false
+      }
+
+      return true
+    },
+    _handleClear() {
+      this.inputValue = null
+      this.phone || (this.phone = null)
     },
     _login() {
       const account = {
@@ -79,10 +127,18 @@ export default {
         password: this.password
       }
       login(account).then(res => {
-        console.log('login-success-res:', res)
-        this.$router.push('/index')
+        console.log('login success:', res)
+        const code = res.data.code
+        console.log(code)
+        if (code >= 500) {
+          alert(res.data.msg)
+        } else if (code >= 200 && code < 300) {
+          this.$router.push('/index')
+        } else if (code >= 400 && code < 500) {
+          alert('错误')
+        }
       }).catch(err => {
-        console.log(err)
+        alert(err.response.data.msg)
       })
     }
   }
@@ -91,87 +147,83 @@ export default {
 
 <style lang="less" scoped>
 @import "~@/assets/style/variables.less";
+
 .checking {
-  &__input {
+  height: 100vh;
+  width: 100vw;
+
+  &__main {
+    margin-top: 30px;
+    padding: 0 15px;
   }
+
   &__tip {
-  }
-}
-
-.back {
-  display: flex;
-}
-
-.mian-ctn {
-  margin: 0 auto;
-  width: 90%;
-
-  .tip_phone {
-    margin: 30px 0;
+    margin-bottom: 30px;
     font-size: @font-size-small;
     color: #777;
   }
 
-  .input {
+  &__input {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding: 8px 0 8px 36px;
+    border-bottom: 1px solid #999;
+  }
+
+  &__input-inner {
     border: none;
     outline: 0;
     width: 100%;
   }
 
-  .btn-next {
+  &__input-pre {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    color: @color-text-gray-light;
+    transform: translateY(-50%);
+    transition: color 0.1s;
+
+    &.-active {
+      color: @color-text-black;
+    }
+  }
+
+  &__input-clear,
+  &__input-link {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
+
+  &__input-clear {
+    &::before {
+      content: "\2717";
+      color: @color-text-gray-light;
+    }
+  }
+
+  &__input-link {
+    font-size: @font-size-small;
+    color: @color-text-gray-light;
+  }
+
+  &__button-next {
     border-radius: 25px;
     margin-top: 30px;
-    padding: 8px 0;
+    padding: 10px 0;
     width: 100%;
     font-size: @font-size-medium-x;
     font-weight: 200;
     text-align: center;
     color: #fff;
     background: @color-primary;
-  }
-}
 
-.input-phone-wrapper,
-.input-pw-wrapper {
-  position: relative;
-  border-bottom: 0.5px solid #000;
-}
-
-.input-phone-wrapper {
-  padding: 5px 35px;
-
-  .countrycode,
-  .clear {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #777;
-  }
-
-  .countrycode {
-    left: 0;
-  }
-
-  .clear {
-    right: 3px;
-    font-size: 20px;
-    font-weight: 300;
-  }
-}
-
-.link {
-  text-decoration: none;
-}
-
-.input-pw-wrapper {
-  padding-right: 72px;
-
-  .link-forget-pw {
-    position: absolute;
-    top: 50%;
-    right: 3px;
-    transform: translateY(-50%);
-    font-size: @font-size-small;
+    &:active {
+      background-color: hsl(4, 76%, 46%);
+    }
   }
 }
 </style>
