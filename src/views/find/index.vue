@@ -13,6 +13,7 @@
 </template>
 
 <script>
+// eslint-disable-next-line
 import { getVideoLabels, getVideos } from 'api/find'
 
 import Banner from 'components/banner'
@@ -31,15 +32,15 @@ export default {
     }
   },
   mounted() {
-    this._getVideoLabels().then(() => {
-      getVideos({
-        id: 58106
-      }).then(res => {
-        console.log('videosRes:', res)
-      }).catch(err => {
-        console.error('getVideo', err.response)
-      })
-    })
+    // this._getVideoLabels().then(() => {
+    //   getVideos({
+    //     id: 58106
+    //   }).then(res => {
+    //     console.log('videosRes:', res)
+    //   }).catch(err => {
+    //     console.error('getVideo', err.response)
+    //   })
+    // })
   },
   methods: {
     _getVideoLabels() {

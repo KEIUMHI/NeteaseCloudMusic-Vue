@@ -2,13 +2,13 @@
   <div class="labels">
     <div class="label-options">
       <CategoryButton
-        v-for="tab in tabFeatureItems"
-        :id="tab.id"
-        :key="tab.id"
+        v-for="item in tabFeatureItems"
+        :id="item.id"
+        :key="item.id"
         :styles="sameStyle"
-        :label="tab.label"
-        :icon-name="tab.iconName"
-        @tab-click="_tabClick"
+        :label="item.label"
+        :icon-name="item.iconName"
+        @tab-click="_tabClick(item.router)"
       />
     </div>
   </div>
@@ -30,34 +30,39 @@ export default {
         fontSize: '10px',
         iconFontSize: '18px',
         background: '#d44439',
-        color: '#777',
+        color: '#777'
       },
       tabFeatureItems: [{
         id: 1,
         label: '每日推荐',
+        router: '',
         iconName: 'iconcalendar'
       }, {
         id: 2,
         label: '歌单',
+        router: '',
         iconName: 'iconround-queue_music'
       }, {
         id: 3,
         label: '排行榜',
+        router: 'rank',
         iconName: 'iconicranking'
       }, {
         id: 4,
         label: '电台',
+        router: '',
         iconName: 'iconradio'
       }, {
         id: 5,
         label: '直播',
+        router: '',
         iconName: 'iconicon_live_hover'
       }]
     }
   },
   methods: {
-    _tabClick(id) {
-      console.log(`label click id: ${id}`)
+    _tabClick(name) {
+      this.$router.push({ name })
     }
   }
 }

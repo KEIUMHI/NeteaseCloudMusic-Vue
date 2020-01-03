@@ -6,9 +6,9 @@
       :src="picUrl"
     />
     <CounterPlay
-      v-if="playCount"
+      v-if="count"
       class="paly-count_position"
-      :count="playCount"
+      :count="count"
     />
   </div>
 </template>
@@ -26,7 +26,7 @@ export default {
       type: String,
       required: true
     },
-    playCount: {
+    count: {
       type: [String, Number],
       default: null
     }

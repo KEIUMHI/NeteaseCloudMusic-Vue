@@ -1,33 +1,31 @@
 <template>
-  <div class="wrap">
-    <div class="tab-head">
-      <div @click="_handleMenu"><i class="iconfont iconMenu"></i></div>
-      <div class="options">
-        <div
-          id="nav"
-          class="swiper-container swiper-no-swiping"
-        >
-          <div class="swiper-wrapper">
-            <div
-              v-for="(tab, index) in tabs"
-              :key="index"
-              class="swiper-slide"
-              @click="_handleClick(index)"
-            >
-              <span :style="tab === '发现' ? {
+  <div class="tab-head">
+    <div @click="_handleMenu"><i class="iconfont iconMenu"></i></div>
+    <div class="options">
+      <div
+        id="nav"
+        class="swiper-container swiper-no-swiping"
+      >
+        <div class="swiper-wrapper">
+          <div
+            v-for="(tab, index) in tabs"
+            :key="index"
+            class="swiper-slide"
+            @click="_handleClick(index)"
+          >
+            <span :style="tab === '发现' ? {
                   fontSize: '16px',
                   fontWeight: 'bold',
                   color: '#333'
                 } : ''">{{ tab }}</span>
-            </div>
-            <!-- <div class="bar">
+          </div>
+          <!-- <div class="bar">
               <div class="color"></div>
             </div> -->
-          </div>
         </div>
       </div>
-      <div @click="_handleSearch"><i class="iconfont iconsearch"></i></div>
     </div>
+    <div @click="_handleSearch"><i class="iconfont iconsearch"></i></div>
   </div>
 </template>
 
@@ -50,10 +48,10 @@ export default {
       console.log(`click tab Index:${index}`)
     },
     _handleMenu() {
-      console.log('click menu.')
+      this.$emit('click', 'menu')
     },
     _handleSearch() {
-      console.log('click search.')
+      this.$emit('click', 'search')
     }
   },
 }
@@ -61,11 +59,14 @@ export default {
 
 <style lang="less" scoped>
 @import "~common/less/variables.less";
+@import "~common/less/mixin.less";
 
 .tab-head {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  .container;
 }
 
 .more,

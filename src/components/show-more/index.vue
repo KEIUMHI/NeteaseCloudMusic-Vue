@@ -1,14 +1,9 @@
 <template>
   <div
-    :class="['show-more', 'd-flex', 'j-a-center', {active: isActive}]"
-    @mouseover="_handleMouseDown"
-    @mouseout="_handleMouseUp"
+    class="show-more"
+    @click="handleClick"
   >
-    <i
-      v-if="iconName"
-      :class="['iconfont', iconName]"
-    ></i>
-    {{ content }}
+    {{ label }}
   </div>
 </template>
 
@@ -16,13 +11,9 @@
 export default {
   name: 'show-more',
   props: {
-    content: {
+    label: {
       type: String,
       default: '更多'
-    },
-    iconName: {
-      type: String,
-      default: ''
     }
   },
   data() {
@@ -31,15 +22,10 @@ export default {
     }
   },
   methods: {
-    _handleMouseDown() {
-      console.log('click 歌单广场, on mouse down. active: ' + this.isActive)
-      this.isActive = !this.isActive
-    },
-    _handleMouseUp() {
-      console.log('click 歌单广场, on mouse up. active: ' + this.isActive)
-      this.isActive = !this.isActive
+    handleClick() {
+      this.$emit('click')
     }
-  }
+  },
 }
 </script>
 
@@ -52,7 +38,7 @@ export default {
   font-size: @font-size-small-s;
   color: #777;
 
-  &.active {
+  &:active {
     background: rgba(119, 119, 119, 0.1);
   }
 }

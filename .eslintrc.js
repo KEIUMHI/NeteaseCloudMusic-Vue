@@ -980,6 +980,10 @@ module.exports = {
                 onlyEquality: true
             }
         ],
+        /**
+         * 限制对象结尾逗号
+         */
+        "comma-dangle": ["error", "never"],
 
         /**
          * This is vue rules.

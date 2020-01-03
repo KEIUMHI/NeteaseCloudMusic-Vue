@@ -60,7 +60,7 @@ export default {
   },
   methods: {
     _handleClick() {
-      this.$emit('tab-click', this.id)
+      this.$emit('click')
     }
   },
 }

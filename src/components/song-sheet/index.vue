@@ -2,7 +2,7 @@
   <div class="song-sheet">
     <SongCover
       :pic-url="picUrl"
-      :play-count="playCount"
+      :count="count"
     />
     <p class="name">{{ name }}</p>
   </div>

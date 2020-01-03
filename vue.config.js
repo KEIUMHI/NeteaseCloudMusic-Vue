@@ -5,7 +5,8 @@ module.exports = {
         'api': '@/api',
         'assets': '@/assets',
         'components': '@/components',
-        'common': '@/common'
+        'common': '@/common',
+        'base': '@/base'
       }
     }
   }

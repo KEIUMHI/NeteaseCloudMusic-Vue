@@ -7,6 +7,7 @@ import {
 import loginRouter from './login/index'
 import checkingRouter from './checking/index'
 import indexRouter from './index/index'
+import rankRouter from './rank/index'
 
 Vue.use(Router)
 
@@ -19,18 +20,19 @@ const router = new Router({
     },
     loginRouter,
     checkingRouter,
-    indexRouter
+    indexRouter,
+    rankRouter
   ]
 })
-/**
- * 全局前置路由守卫
- * 判断是否已登陆
- * 没有登陆则跳转到登陆页
- */
+
 router.beforeEach((to, from, next) => {
   if (to.name !== 'login' && to.name !== 'checking') {
+    if (from.name === 'login') {
+      next()
+      return
+    }
     loginStatus().then(res => {
-      console.log(res)
+      console.log('loginStatus', res)
       next()
     }).catch(err => {
       console.error('loginStatusError:', err.response)
