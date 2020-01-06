@@ -22,9 +22,12 @@
         class="login__treaty"
       >
         <input
+          id="login__checkbox"
           class="login__treaty-checkbox"
           type="checkbox"
-        ><span>同意</span><a
+        >
+        <label for="login__checkbox"></label>
+        <span>同意</span><a
           class="login__treaty-link"
           href="#"
         >《用户协议》</a><span>和</span><a
@@ -92,12 +95,13 @@ export default {
     width: 70%;
     margin: 0 auto 24px;
     padding: 10px;
-    border: 0.5px solid #fff;
+    border: 1px solid #fff;
     border-radius: 25px;
     font-size: @font-size-medium;
 
     &-phone {
       margin-bottom: 14px;
+      border: none;
       color: @color-primary;
       background-color: #fff;
       &:active {
@@ -122,7 +126,20 @@ export default {
     color: @color-text-gray-seat;
 
     &-checkbox {
+      visibility: hidden;
+    }
+
+    &-checkbox + label {
+      width: 11px;
+      height: 11px;
       margin-right: 5px;
+      border: 1px solid #ccc;
+      border-radius: 2px;
+      background-color: transparent;
+    }
+
+    &-checkbox:checked + label::before {
+      content: "\2714";
     }
 
     &-link {

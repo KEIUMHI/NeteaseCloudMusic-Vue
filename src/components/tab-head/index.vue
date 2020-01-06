@@ -53,7 +53,7 @@ export default {
     _handleSearch() {
       this.$emit('click', 'search')
     }
-  },
+  }
 }
 </script>
 
