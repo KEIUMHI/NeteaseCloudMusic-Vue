@@ -50,6 +50,8 @@ module.exports = {
     globals: {
         "process": true,
         "module": true,
+        "require": true,
+        "resolve": true,
         "window": true,
         "document": true,
         "console": true,

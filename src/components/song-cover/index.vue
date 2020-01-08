@@ -1,9 +1,9 @@
 <template>
-  <div class="song-cover d-flex">
+  <div class="song-cover">
     <img
       class="img"
       alt="recommend-music_img"
-      :src="picUrl"
+      :src="img"
     />
     <CounterPlay
       v-if="count"
@@ -22,7 +22,7 @@ export default {
     CounterPlay
   },
   props: {
-    picUrl: {
+    img: {
       type: String,
       required: true
     },
@@ -36,6 +36,7 @@ export default {
 
 <style lang="less" scoped>
 .song-cover {
+  display: flex;
   position: relative;
 
   .img {

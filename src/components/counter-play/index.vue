@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="play-count d-flex j-a-center"
-    :style="styles"
-  >
+  <div class="play-count">
     <i class="iconfont iconplay"></i>{{ count | formatCount }}
   </div>
 </template>
@@ -16,7 +13,7 @@ export default {
         return `${(count / 100000000).toFixed(1)}亿`
       } else if (count > 100000) { // 大于十万
         return `${parseInt(count / 10000, 10)}万`
-      } else { // 不然就是数字
+      } else { // 默认
         return count
       }
     }
@@ -24,18 +21,7 @@ export default {
   props: {
     count: {
       type: Number,
-      required: true,
-      default: 0
-    },
-    styles: {
-      type: Object,
-      default: () => {
-        return {
-          fontSize: '10px',
-          color: '#fff',
-          iconSize: '12px'
-        }
-      }
+      required: true
     }
   }
 }
@@ -44,7 +30,7 @@ export default {
 <style lang="less" scoped>
 @import "~common/less/variables.less";
 
-.paly-count {
+.play-count {
   font-size: @font-size-small-s;
   color: #fff;
 }

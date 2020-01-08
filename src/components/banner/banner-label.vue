@@ -1,5 +1,5 @@
 <template>
-  <div :class="['banner-title', typeColor]">
+  <div :class="['banner-title', color]">
     {{ title }}
   </div>
 </template>
@@ -12,7 +12,7 @@ export default {
       type: String,
       default: '独家'
     },
-    typeColor: {
+    color: {
       type: String,
       default: 'red' // 十六进制、rgba、colorName
     }

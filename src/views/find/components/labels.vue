@@ -5,9 +5,8 @@
         v-for="item in tabFeatureItems"
         :id="item.id"
         :key="item.id"
-        :styles="sameStyle"
         :label="item.label"
-        :icon-name="item.iconName"
+        :icon-class="item.iconClass"
         @tab-click="_tabClick(item.router)"
       />
     </div>
@@ -24,51 +23,59 @@ export default {
   },
   data() {
     return {
-      sameStyle: {
-        width: '38px',
-        height: '38px',
-        fontSize: '10px',
-        iconFontSize: '18px',
-        background: '#d44439',
-        color: '#777'
-      },
+      // sameStyle: {
+      //   width: '38px',
+      //   height: '38px',
+      //   fontSize: '10px',
+      //   iconFontSize: '18px',
+      //   background: '#d44439',
+      //   color: '#777'
+      // },
       tabFeatureItems: [{
         id: 1,
         label: '每日推荐',
         router: '',
-        iconName: 'iconcalendar'
+        iconClass: 'date'
       }, {
         id: 2,
         label: '歌单',
         router: '',
-        iconName: 'iconround-queue_music'
+        iconClass: 'list'
       }, {
         id: 3,
         label: '排行榜',
-        router: 'rank',
-        iconName: 'iconicranking'
+        router: 'ranking',
+        iconClass: 'ranking'
       }, {
         id: 4,
         label: '电台',
         router: '',
-        iconName: 'iconradio'
+        iconClass: 'radio'
       }, {
         id: 5,
         label: '直播',
         router: '',
-        iconName: 'iconicon_live_hover'
+        iconClass: 'station'
       }]
     }
   },
   methods: {
     _tabClick(name) {
-      this.$router.push({ name })
+      this.$router.push({
+        name
+      })
     }
   }
 }
 </script>
 
 <style lang="less" scoped>
+@import "~common/less/mixin.less";
+
+.labels {
+  .container;
+}
+
 .label-options {
   display: flex;
   justify-content: space-between;

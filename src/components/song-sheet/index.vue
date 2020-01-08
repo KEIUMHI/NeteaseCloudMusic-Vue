@@ -1,7 +1,7 @@
 <template>
   <div class="song-sheet">
     <SongCover
-      :pic-url="picUrl"
+      :img="img"
       :count="count"
     />
     <p class="name">{{ name }}</p>
@@ -9,7 +9,6 @@
 </template>
 
 <script>
-// COMPONENTS
 import SongCover from '../song-cover'
 
 export default {
@@ -26,7 +25,7 @@ export default {
       type: String,
       required: true
     },
-    picUrl: {
+    img: {
       type: String,
       required: true
     },
@@ -37,15 +36,6 @@ export default {
     count: {
       type: [String, Number],
       default: null
-    },
-    styles: {
-      type: Object,
-      default: () => {
-        return {
-          width: '100px',
-          heigth: '100px'
-        }
-      }
     }
   }
 }

@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './routers'
 import store from './stores'
+import './icons'
 
 Vue.filter('setWH', (url, arg) => {
   return `${url}?param=wyh`.replace(/wyh/, arg)

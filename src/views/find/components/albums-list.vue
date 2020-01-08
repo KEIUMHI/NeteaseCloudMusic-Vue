@@ -23,7 +23,7 @@
         :id="item.id"
         :key="index"
         :name="item.name"
-        :pic-url="item.picUrl || item.song.album.picUrl || ''"
+        :img="item.picUrl || item.song.album.picUrl || ''"
       />
     </base-list-view>
   </div>
@@ -72,8 +72,10 @@ export default {
 <style lang="less" scoped>
 @import "~common/less/variables.less";
 @import "~common/less/mixin.less";
+
 .albums-list {
   .container;
+
   &__title-double {
     position: relative;
 

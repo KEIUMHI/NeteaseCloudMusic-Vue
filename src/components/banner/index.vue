@@ -17,7 +17,7 @@
               v-if="banner.typeTitle"
               class="banner-title"
               :title="banner.typeTitle"
-              :type-color="banner.titleColor"
+              :color="banner.titleColor"
             />
           </div>
         </div>
@@ -56,7 +56,6 @@ export default {
       return getBanner({
         type: 0
       }).then(res => {
-        console.log('bannerRes:', res)
         if (res.statusText === 'OK') {
           this.banners = res.data.banners
         }
@@ -73,7 +72,7 @@ export default {
           disableOnInteraction: false
         },
         pagination: {
-          el: '.banner-pagination',
+          el: '.banner-pagination'
         }
       })
     }

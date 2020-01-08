@@ -14,7 +14,7 @@
         :id="item.id"
         :key="item.id"
         :name="item.name"
-        :pic-url="item.picUrl"
+        :img="item.picUrl"
         :count="item.playCount"
       />
     </base-list-view>

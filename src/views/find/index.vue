@@ -1,22 +1,9 @@
 <template>
   <div class="find-container">
     <Banner />
-
-    <div class="wrap">
-      <Labels />
-    </div>
-
-    <hr style="margin: 0; border: .5px solid #eee;" />
-
-    <!-- <Recommend
-      :recommend-list="recommendList"
-      :albums-list="albumsList"
-      :song-list="songList"
-    /> -->
-
+    <Labels />
     <RecommendList :data="recommendList" />
     <AlbumsList :data="{albumsList, songList}" />
-
   </div>
 </template>
 
@@ -116,4 +103,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.find-container {
+  &/deep/.labels {
+    border-bottom: 1px solid #eee;
+  }
+}
 </style>
